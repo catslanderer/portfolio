@@ -4,10 +4,13 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // import banner from '../assets/images/<something>.png';
 
-const color0 = '#2ACC88';
-const color1 = '#00FF99';
-const color2 = '#0066FF';
-const color3 = '#FF0066';
+const color0 = '#2ACC88'; // Background color
+const color1a = '#00FF99'; // Left-top trapezoid
+const color1b = '#00FF99'; // Right-bottom trapezoid
+const color2a = '#0066FF'; // Left triangle
+const color2b = '#0066FF'; // Right triangle
+const color3a = '#FF0066'; // Left-bottom trapezoid
+const color3b = '#FF0066'; // Right-top trapezoid
 
 const useStyles = makeStyles({
   root: {
@@ -72,15 +75,15 @@ export default function Banner() {
           >
             <path
               d='M57.3654 50.3343L28.6175 0.878143H112.547L84.0424 50.3343H57.3654Z'
-              fill={color1}
+              fill={color1a}
             />
             <path
               d='M57.3457 50.2741H0.18927L42.2994 122.965L70.9265 73.4298L57.3457 50.2741Z'
-              fill={color2}
+              fill={color2a}
             />
             <path
               d='M84.1633 50.2746L70.8149 73.3948L57.4664 50.2746L84.1633 50.2746Z'
-              fill={color3}
+              fill={color3a}
             />
           </svg>
           <div className={classes.text}>
@@ -101,15 +104,15 @@ export default function Banner() {
           >
             <path
               d='M55.4531 73.2766L84.2009 122.733H0.27174L28.776 73.2766H55.4531Z'
-              fill={color1}
+              fill={color1b}
             />
             <path
               d='M55.4727 73.3368H112.629L70.519 0.645485L41.8919 50.1811L55.4727 73.3368Z'
-              fill={color2}
+              fill={color2b}
             />
             <path
               d='M28.6551 73.3363L42.0035 50.2161L55.352 73.3363L28.6551 73.3363Z'
-              fill={color3}
+              fill={color3b}
             />
           </svg>
         </div>
