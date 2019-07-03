@@ -2,7 +2,12 @@ import React from 'react';
 import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import banner from '../assets/images/banner-triangles.png';
+// import banner from '../assets/images/<something>.png';
+
+const color0 = '#2ACC88';
+const color1 = '#00FF99';
+const color2 = '#0066FF';
+const color3 = '#FF0066';
 
 const useStyles = makeStyles({
   root: {
@@ -18,7 +23,7 @@ const useStyles = makeStyles({
     alignItems: 'center',
     width: '2400px',
     height: '500px',
-    background: '#2ACC88'
+    background: `${color0}`
   },
   content: {
     display: 'flex'
@@ -67,15 +72,15 @@ export default function Banner() {
           >
             <path
               d='M57.3654 50.3343L28.6175 0.878143H112.547L84.0424 50.3343H57.3654Z'
-              fill='#00FF99'
+              fill={color1}
             />
             <path
               d='M57.3457 50.2741H0.18927L42.2994 122.965L70.9265 73.4298L57.3457 50.2741Z'
-              fill='#0066FF'
+              fill={color2}
             />
             <path
               d='M84.1633 50.2746L70.8149 73.3948L57.4664 50.2746L84.1633 50.2746Z'
-              fill='#FF0066'
+              fill={color3}
             />
           </svg>
           <div className={classes.text}>
@@ -96,15 +101,15 @@ export default function Banner() {
           >
             <path
               d='M55.4531 73.2766L84.2009 122.733H0.27174L28.776 73.2766H55.4531Z'
-              fill='#00FF99'
+              fill={color1}
             />
             <path
               d='M55.4727 73.3368H112.629L70.519 0.645485L41.8919 50.1811L55.4727 73.3368Z'
-              fill='#0066FF'
+              fill={color2}
             />
             <path
               d='M28.6551 73.3363L42.0035 50.2161L55.352 73.3363L28.6551 73.3363Z'
-              fill='#FF0066'
+              fill={color3}
             />
           </svg>
         </div>
