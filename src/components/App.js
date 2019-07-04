@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Banner from './Banner';
+import Banner from './Banner1';
 
 function App() {
   return (
