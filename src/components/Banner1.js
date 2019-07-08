@@ -1,10 +1,11 @@
 import React from 'react';
 import { Box, Link, Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const color0 = '#2ACC88'; // Background color
 const color1a = '#008080'; // Text color
-const color1b = '#252741'; // Link color
+const color1b = '#008080'; // Link color
 const color2a = '#F1D7D2'; // Left-top trapezoid
 const color2b = '#F1D7D2'; // Left-bottom trapezoid
 const color2c = '#00000000'; // Left triangle
@@ -12,23 +13,21 @@ const color3a = '#252741'; // Right-top trapezoid
 const color3b = '#252741'; // Right-bottom trapezoid
 const color3c = '#00000000'; // Right triangle
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
     width: '100%'
   },
   rectangle: {
-    display: 'flex',
-    flexDirection: 'column',
+    display: 'grid',
+    gridTemplateRows: 'repeat(3, 33%)',
     maxWidth: '100%',
     width: '2400px',
     height: '500px',
     background: `${color0}`
   },
-  links: {
-    flexGrow: 1,
-    paddingTop: '15px',
-    display: 'flex',
-    justifyContent: 'flex-end'
+  linksdiv: {
+    justifySelf: 'end',
+    paddingTop: '15px'
   },
   link: {
     margin: '15px',
@@ -37,51 +36,115 @@ const useStyles = makeStyles({
     color: `${color1b}`
   },
   content: {
-    flexGrow: 99,
-    maxWidth: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'relative',
-    top: '-30px'
+    display: 'grid',
+    justifySelf: 'center',
+    maxWidth: '100%'
   },
   logodiv: {
+    alignSelf: 'center',
     display: 'flex'
   },
   logo1: {
     position: 'relative',
     top: '-30px',
-    left: '15px'
+    left: '15px',
+    [theme.breakpoints.down('xl')]: {
+      width: '113px',
+      height: 'auto'
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '75px',
+      height: 'auto'
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: '57px',
+      height: 'auto'
+    }
   },
   logo2: {
     position: 'relative',
     top: '25px',
-    left: '-40px'
+    left: '-40px',
+    [theme.breakpoints.down('xl')]: {
+      width: '113px',
+      height: 'auto'
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '75px',
+      height: 'auto'
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: '57px',
+      height: 'auto'
+    }
   },
   text: {
     display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center'
+    flexDirection: 'column'
   },
   title: {
+    display: 'flex',
+    justifyContent: 'center',
     fontWeight: 'bold',
-    fontSize: '3em',
-    color: `${color1a}`
+    color: `${color1a}`,
+    [theme.breakpoints.down('xl')]: {
+      fontSize: '3em'
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2em'
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1.5em'
+    }
   },
   subtitle: {
+    display: 'flex',
+    justifyContent: 'center',
     fontWeight: '300',
-    fontSize: '1.4em',
-    color: `${color1a}`
+    color: `${color1a}`,
+    [theme.breakpoints.down('xl')]: {
+      fontSize: '1.4em'
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.93em'
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '0.7em'
+    }
+  },
+  widthdiv: {
+    display: 'grid',
+    justifySelf: 'center',
+    alignSelf: 'center'
+  },
+  widthText: {
+    color: 'white',
+    [theme.breakpoints.only('xl')]: {
+      fontSize: '3em'
+    },
+    [theme.breakpoints.only('lg')]: {
+      fontSize: '3em'
+    },
+    [theme.breakpoints.only('md')]: {
+      fontSize: '3em'
+    },
+    [theme.breakpoints.only('sm')]: {
+      fontSize: '2em'
+    },
+    [theme.breakpoints.only('xs')]: {
+      fontSize: '1.5em'
+    }
   }
-});
+}));
 
 export default function Banner() {
   const classes = useStyles();
+  const theme = useTheme();
 
   return (
     <Box className={classes.root}>
       <div className={classes.rectangle}>
-        <div className={classes.links}>
+        <div className={classes.linksdiv}>
           <Typography>
             <Link
               href='https://christopherjfoster.dev/index.html'
@@ -162,6 +225,37 @@ export default function Banner() {
               />
             </svg>
           </div>
+        </div>
+        <div className={classes.widthdiv}>
+          {useMediaQuery(theme.breakpoints.only('xs')) && (
+            <Typography className={classes.widthText}>
+              xs: {theme.breakpoints.values.xs}px -{' '}
+              {theme.breakpoints.values.sm}px
+            </Typography>
+          )}
+          {useMediaQuery(theme.breakpoints.only('sm')) && (
+            <Typography className={classes.widthText}>
+              sm: {theme.breakpoints.values.sm}px -{' '}
+              {theme.breakpoints.values.md}px
+            </Typography>
+          )}
+          {useMediaQuery(theme.breakpoints.only('md')) && (
+            <Typography className={classes.widthText}>
+              md: {theme.breakpoints.values.md}px -{' '}
+              {theme.breakpoints.values.lg}px
+            </Typography>
+          )}
+          {useMediaQuery(theme.breakpoints.only('lg')) && (
+            <Typography className={classes.widthText}>
+              lg: {theme.breakpoints.values.lg}px -{' '}
+              {theme.breakpoints.values.xl}px
+            </Typography>
+          )}
+          {useMediaQuery(theme.breakpoints.only('xl')) && (
+            <Typography className={classes.widthText}>
+              xl: > {theme.breakpoints.values.xl}px
+            </Typography>
+          )}
         </div>
       </div>
     </Box>
