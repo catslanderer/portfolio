@@ -3,15 +3,17 @@ import { Box, Link, Typography } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
-const color0 = '#2ACC88'; // Background color
-const color1a = '#008080'; // Text color
-const color1b = '#008080'; // Link color
-const color2a = '#F1D7D2'; // Left-top trapezoid
-const color2b = '#F1D7D2'; // Left-bottom trapezoid
-const color2c = '#00000000'; // Left triangle
-const color3a = '#252741'; // Right-top trapezoid
-const color3b = '#252741'; // Right-bottom trapezoid
-const color3c = '#00000000'; // Right triangle
+import NavDrawer from './NavDrawer';
+
+const color0 = '#53d3d1'; // Background color
+const color1a = '#002447'; // Text color
+const color1b = '#002447'; // Link color
+const color2a = '#FBECEB'; // Left-top trapezoid
+const color2b = '#FBECEB'; // Left-bottom trapezoid
+const color2c = '#FEB249'; // Left triangle
+const color3a = '#002447'; // Right-top trapezoid
+const color3b = '#002447'; // Right-bottom trapezoid
+const color3c = '#FEB249'; // Right triangle
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -21,16 +23,31 @@ const useStyles = makeStyles(theme => ({
     display: 'grid',
     gridTemplateRows: 'repeat(3, 33%)',
     maxWidth: '100%',
-    width: '2400px',
-    height: '500px',
-    background: `${color0}`
+    background: `${color0}`,
+    [theme.breakpoints.down('xl')]: {
+      width: '2400px',
+      height: '500px'
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '2400px',
+      height: '350px'
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: '2400px',
+      height: '225px'
+    }
   },
   linksdiv: {
     justifySelf: 'end',
-    paddingTop: '15px'
+    [theme.breakpoints.down('xl')]: {
+      padding: '15px 8px 0px 0px'
+    },
+    [theme.breakpoints.down('sm')]: {
+      padding: '7px 12px 0px 0px'
+    }
   },
   link: {
-    margin: '15px',
+    margin: '12px',
     fontWeight: '300',
     fontSize: '1.1em',
     color: `${color1b}`
@@ -38,44 +55,52 @@ const useStyles = makeStyles(theme => ({
   content: {
     display: 'grid',
     justifySelf: 'center',
+    alignSelf: 'center',
     maxWidth: '100%'
   },
   logodiv: {
-    alignSelf: 'center',
     display: 'flex'
   },
   logo1: {
     position: 'relative',
-    top: '-30px',
-    left: '15px',
     [theme.breakpoints.down('xl')]: {
       width: '113px',
-      height: 'auto'
+      height: 'auto',
+      top: '-30px',
+      left: '15px'
     },
     [theme.breakpoints.down('sm')]: {
-      width: '75px',
-      height: 'auto'
+      width: '77px',
+      height: 'auto',
+      top: '-23px',
+      left: '15px'
     },
     [theme.breakpoints.down('xs')]: {
-      width: '57px',
-      height: 'auto'
+      width: '50px',
+      height: 'auto',
+      top: '-17px',
+      left: '10px'
     }
   },
   logo2: {
     position: 'relative',
-    top: '25px',
-    left: '-40px',
     [theme.breakpoints.down('xl')]: {
       width: '113px',
-      height: 'auto'
+      height: 'auto',
+      top: '25px',
+      left: '-40px'
     },
     [theme.breakpoints.down('sm')]: {
-      width: '75px',
-      height: 'auto'
+      width: '77px',
+      height: 'auto',
+      top: '17px',
+      left: '-30px'
     },
     [theme.breakpoints.down('xs')]: {
-      width: '57px',
-      height: 'auto'
+      width: '50px',
+      height: 'auto',
+      top: '8px',
+      left: '-20px'
     }
   },
   text: {
@@ -85,7 +110,7 @@ const useStyles = makeStyles(theme => ({
   title: {
     display: 'flex',
     justifyContent: 'center',
-    fontWeight: 'bold',
+    fontWeight: '700',
     color: `${color1a}`,
     [theme.breakpoints.down('xl')]: {
       fontSize: '3em'
@@ -94,7 +119,7 @@ const useStyles = makeStyles(theme => ({
       fontSize: '2em'
     },
     [theme.breakpoints.down('xs')]: {
-      fontSize: '1.5em'
+      fontSize: '1.2em'
     }
   },
   subtitle: {
@@ -109,11 +134,11 @@ const useStyles = makeStyles(theme => ({
       fontSize: '0.93em'
     },
     [theme.breakpoints.down('xs')]: {
-      fontSize: '0.7em'
+      fontSize: '0.56em'
     }
   },
   widthdiv: {
-    display: 'grid',
+    // display: 'none',
     justifySelf: 'center',
     alignSelf: 'center'
   },
@@ -145,32 +170,35 @@ export default function Banner() {
     <Box className={classes.root}>
       <div className={classes.rectangle}>
         <div className={classes.linksdiv}>
-          <Typography>
-            <Link
-              href='https://christopherjfoster.dev/index.html'
-              className={classes.link}
-            >
-              TOP
-            </Link>
-            <Link
-              href='https://christopherjfoster.dev/index.html'
-              className={classes.link}
-            >
-              PROJECTS
-            </Link>
-            <Link
-              href='https://christopherjfoster.dev/index.html'
-              className={classes.link}
-            >
-              TECH STACK
-            </Link>
-            <Link
-              href='https://christopherjfoster.dev/index.html'
-              className={classes.link}
-            >
-              CONTACT
-            </Link>
-          </Typography>
+          {useMediaQuery(theme.breakpoints.up('md')) && (
+            <Typography>
+              <Link
+                href='https://christopherjfoster.dev/index.html'
+                className={classes.link}
+              >
+                TOP
+              </Link>
+              <Link
+                href='https://christopherjfoster.dev/index.html'
+                className={classes.link}
+              >
+                PROJECTS
+              </Link>
+              <Link
+                href='https://christopherjfoster.dev/index.html'
+                className={classes.link}
+              >
+                TECH STACK
+              </Link>
+              <Link
+                href='https://christopherjfoster.dev/index.html'
+                className={classes.link}
+              >
+                CONTACT
+              </Link>
+            </Typography>
+          )}
+          {useMediaQuery(theme.breakpoints.down('sm')) && <NavDrawer />}
         </div>
         <div className={classes.content}>
           <div className={classes.logodiv}>
