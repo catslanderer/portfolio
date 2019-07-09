@@ -1,5 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Drawer from '@material-ui/core/Drawer';
 import Menu from '@material-ui/icons/Menu';
 import List from '@material-ui/core/List';
@@ -26,6 +27,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function NavDrawer() {
   const classes = useStyles();
+  const theme = useTheme();
   const [state, setState] = React.useState({
     top: false
   });
@@ -49,23 +51,37 @@ export default function NavDrawer() {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        {['TOP', 'PROJECTS', 'TECH STACK', 'CONTACT'].map(text => (
-          <ListItem button key={text}>
+        {[
+          { text: 'TOP', link: 'https://christopherjfoster.dev/index.html' },
+          {
+            text: 'PROJECTS',
+            link: 'https://christopherjfoster.dev/index.html'
+          },
+          {
+            text: 'TECH STACK',
+            link: 'https://christopherjfoster.dev/index.html'
+          },
+          { text: 'CONTACT', link: 'https://christopherjfoster.dev/index.html' }
+        ].map(item => (
+          <ListItem button component='a' href={item.link} key={item.text}>
             <ListItemIcon>
-              {text === 'TOP' ? (
+              {item.text === 'TOP' ? (
                 <ArrowUpward
                   className={classes.drawerContent}
                   color='primary'
                 />
-              ) : text === 'PROJECTS' ? (
+              ) : item.text === 'PROJECTS' ? (
                 <PhotoLibrary className={classes.drawerContent} />
-              ) : text === 'TECH STACK' ? (
+              ) : item.text === 'TECH STACK' ? (
                 <Memory className={classes.drawerContent} />
               ) : (
                 <MailIcon className={classes.drawerContent} />
               )}
             </ListItemIcon>
-            <ListItemText className={classes.drawerContent} primary={text} />
+            <ListItemText
+              className={classes.drawerContent}
+              primary={item.text}
+            />
           </ListItem>
         ))}
       </List>
@@ -75,7 +91,9 @@ export default function NavDrawer() {
   return (
     <div>
       <Menu
-        fontSize='large'
+        fontSize={
+          useMediaQuery(theme.breakpoints.only('xs')) ? 'small' : 'large'
+        }
         color='primary'
         onClick={toggleDrawer('top', true)}
       />
