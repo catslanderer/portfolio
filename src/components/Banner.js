@@ -5,16 +5,6 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 import NavDrawer from './NavDrawer';
 
-const color0 = '#53d3d1'; // Background color
-const color1a = '#002447'; // Text color
-const color1b = '#002447'; // Link color
-const color2a = '#FBECEB'; // Left-top trapezoid
-const color2b = '#FBECEB'; // Left-bottom trapezoid
-const color2c = '#FEB249'; // Left triangle
-const color3a = '#002447'; // Right-top trapezoid
-const color3b = '#002447'; // Right-bottom trapezoid
-const color3c = '#FEB249'; // Right triangle
-
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%'
@@ -23,17 +13,15 @@ const useStyles = makeStyles(theme => ({
     display: 'grid',
     gridTemplateRows: 'repeat(3, 33%)',
     maxWidth: '100%',
-    background: `${color0}`,
+    background: [theme.palette.primary.main],
     [theme.breakpoints.down('xl')]: {
-      width: '2400px',
+      width: '100%',
       height: '500px'
     },
     [theme.breakpoints.down('sm')]: {
-      width: '2400px',
       height: '350px'
     },
     [theme.breakpoints.down('xs')]: {
-      width: '2400px',
       height: '225px'
     }
   },
@@ -47,10 +35,10 @@ const useStyles = makeStyles(theme => ({
     }
   },
   link: {
-    margin: '12px',
+    margin: '10px',
     fontWeight: '300',
     fontSize: '1.1em',
-    color: `${color1b}`
+    color: [theme.palette.primary.xdark]
   },
   content: {
     display: 'grid',
@@ -111,7 +99,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     justifyContent: 'center',
     fontWeight: '700',
-    color: `${color1a}`,
+    color: [theme.palette.primary.xdark],
     [theme.breakpoints.down('xl')]: {
       fontSize: '3em'
     },
@@ -126,7 +114,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     justifyContent: 'center',
     fontWeight: '300',
-    color: `${color1a}`,
+    color: [theme.palette.primary.xdark],
     [theme.breakpoints.down('xl')]: {
       fontSize: '1.4em'
     },
@@ -212,15 +200,15 @@ export default function Banner() {
             >
               <path
                 d='M57.3654 50.3343L28.6175 0.878143H112.547L84.0424 50.3343H57.3654Z'
-                fill={color2a}
+                fill={theme.palette.pink.main}
               />
               <path
                 d='M57.3457 50.2741H0.18927L42.2994 122.965L70.9265 73.4298L57.3457 50.2741Z'
-                fill={color2b}
+                fill={theme.palette.pink.main}
               />
               <path
                 d='M84.1633 50.2746L70.8149 73.3948L57.4664 50.2746L84.1633 50.2746Z'
-                fill={color2c}
+                fill={theme.palette.orange.main}
               />
             </svg>
             <div className={classes.text}>
@@ -241,15 +229,15 @@ export default function Banner() {
             >
               <path
                 d='M55.4531 73.2766L84.2009 122.733H0.27174L28.776 73.2766H55.4531Z'
-                fill={color3a}
+                fill={theme.palette.purple.main}
               />
               <path
                 d='M55.4727 73.3368H112.629L70.519 0.645485L41.8919 50.1811L55.4727 73.3368Z'
-                fill={color3b}
+                fill={theme.palette.purple.main}
               />
               <path
                 d='M28.6551 73.3363L42.0035 50.2161L55.352 73.3363L28.6551 73.3363Z'
-                fill={color3c}
+                fill={theme.palette.orange.main}
               />
             </svg>
           </div>

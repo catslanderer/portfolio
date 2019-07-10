@@ -94,7 +94,7 @@ export default function NavDrawer() {
         fontSize={
           useMediaQuery(theme.breakpoints.only('xs')) ? 'small' : 'large'
         }
-        color='primary'
+        style={{ color: [theme.palette.primary.xdark] }}
         onClick={toggleDrawer('top', true)}
       />
       <Drawer

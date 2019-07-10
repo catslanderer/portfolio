@@ -11,11 +11,39 @@ export default createMuiTheme({
     }
   },
   palette: {
+    // teal
     primary: {
-      main: '#002447'
+      light: '#8bffff',
+      main: '#53d3d1',
+      dark: '#00a1a0',
+      xdark: '#006666'
     },
+    // orange
     secondary: {
-      main: '#53d3d1'
+      light: '#ffe479',
+      main: '#feb249',
+      dark: '#c78214'
+    },
+    orange: {
+      light: '#ffe479',
+      main: '#feb249',
+      dark: '#c78214'
+    },
+    pink: {
+      light: '#ffffff',
+      main: '#FBECEB',
+      dark: '#c8bab9'
+    },
+    purple: {
+      light: '#344b73',
+      main: '#002447',
+      dark: '#000020'
+    },
+    teal: {
+      light: '#8bffff',
+      main: '#53d3d1',
+      dark: '#00a1a0',
+      xdark: '#006666'
     }
   }
 });
