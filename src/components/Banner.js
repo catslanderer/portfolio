@@ -1,15 +1,13 @@
 import React from 'react';
-import { Box, Link, Typography } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-
-import NavDrawer from './NavDrawer';
 
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%'
   },
-  rectangle: {
+  container: {
     display: 'grid',
     gridTemplateRows: 'repeat(3, 33%)',
     maxWidth: '100%',
@@ -43,7 +41,7 @@ const useStyles = makeStyles(theme => ({
   content: {
     display: 'grid',
     justifySelf: 'center',
-    alignSelf: 'center',
+    alignSelf: 'start',
     maxWidth: '100%'
   },
   logodiv: {
@@ -51,44 +49,40 @@ const useStyles = makeStyles(theme => ({
   },
   logo1: {
     position: 'relative',
+    height: 'auto',
     [theme.breakpoints.down('xl')]: {
-      width: '113px',
-      height: 'auto',
-      top: '-30px',
-      left: '15px'
+      width: '120px',
+      top: '-40px',
+      left: '0px'
     },
     [theme.breakpoints.down('sm')]: {
-      width: '77px',
-      height: 'auto',
-      top: '-23px',
-      left: '15px'
+      width: '80px',
+      top: '-27px',
+      left: '0px'
     },
     [theme.breakpoints.down('xs')]: {
       width: '50px',
-      height: 'auto',
       top: '-17px',
-      left: '10px'
+      left: '0px'
     }
   },
   logo2: {
     position: 'relative',
+    height: 'auto',
     [theme.breakpoints.down('xl')]: {
-      width: '113px',
-      height: 'auto',
-      top: '25px',
-      left: '-40px'
+      width: '120px',
+      top: '12px',
+      left: '-7px'
     },
     [theme.breakpoints.down('sm')]: {
-      width: '77px',
-      height: 'auto',
-      top: '17px',
-      left: '-30px'
+      width: '80px',
+      top: '8px',
+      left: '-7px'
     },
     [theme.breakpoints.down('xs')]: {
       width: '50px',
-      height: 'auto',
-      top: '8px',
-      left: '-20px'
+      top: '4px',
+      left: '-7px'
     }
   },
   text: {
@@ -111,6 +105,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   subtitle: {
+    marginTop: '3px',
     display: 'flex',
     justifyContent: 'center',
     fontWeight: '300',
@@ -156,44 +151,12 @@ export default function Banner() {
 
   return (
     <Box className={classes.root}>
-      <div className={classes.rectangle}>
-        <div className={classes.linksdiv}>
-          {useMediaQuery(theme.breakpoints.up('md')) && (
-            <Typography>
-              <Link
-                href='https://christopherjfoster.dev/index.html'
-                className={classes.link}
-              >
-                TOP
-              </Link>
-              <Link
-                href='https://christopherjfoster.dev/index.html'
-                className={classes.link}
-              >
-                PROJECTS
-              </Link>
-              <Link
-                href='https://christopherjfoster.dev/index.html'
-                className={classes.link}
-              >
-                TECH STACK
-              </Link>
-              <Link
-                href='https://christopherjfoster.dev/index.html'
-                className={classes.link}
-              >
-                CONTACT
-              </Link>
-            </Typography>
-          )}
-          {useMediaQuery(theme.breakpoints.down('sm')) && <NavDrawer />}
-        </div>
+      <div className={classes.container}>
+        <div />
         <div className={classes.content}>
           <div className={classes.logodiv}>
             <svg
               className={classes.logo1}
-              width='113'
-              height='123'
               viewBox='0 0 113 123'
               fill='none'
               xmlns='http://www.w3.org/2000/svg'
@@ -221,8 +184,6 @@ export default function Banner() {
             </div>
             <svg
               className={classes.logo2}
-              width='113'
-              height='123'
               viewBox='0 0 113 123'
               fill='none'
               xmlns='http://www.w3.org/2000/svg'

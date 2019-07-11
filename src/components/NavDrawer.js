@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Drawer from '@material-ui/core/Drawer';
 import Menu from '@material-ui/icons/Menu';
 import List from '@material-ui/core/List';
@@ -21,7 +20,7 @@ const useStyles = makeStyles(theme => ({
   },
   menuIcon: {},
   drawerContent: {
-    color: '#004080'
+    color: [theme.palette.teal.dark]
   }
 }));
 
@@ -66,10 +65,7 @@ export default function NavDrawer() {
           <ListItem button component='a' href={item.link} key={item.text}>
             <ListItemIcon>
               {item.text === 'TOP' ? (
-                <ArrowUpward
-                  className={classes.drawerContent}
-                  color='primary'
-                />
+                <ArrowUpward className={classes.drawerContent} />
               ) : item.text === 'PROJECTS' ? (
                 <PhotoLibrary className={classes.drawerContent} />
               ) : item.text === 'TECH STACK' ? (
@@ -91,9 +87,7 @@ export default function NavDrawer() {
   return (
     <div>
       <Menu
-        fontSize={
-          useMediaQuery(theme.breakpoints.only('xs')) ? 'small' : 'large'
-        }
+        fontSize='large'
         style={{ color: [theme.palette.primary.xdark] }}
         onClick={toggleDrawer('top', true)}
       />
