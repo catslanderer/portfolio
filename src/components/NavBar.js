@@ -41,7 +41,20 @@ const useStyles = makeStyles(theme => ({
       gridTemplateColumns: '75% 25%'
     }
   },
-  logodiv: {
+  logoDiv: {
+    opacity: 0,
+    transition: 'opacity 0.9s',
+    display: 'flex',
+    [theme.breakpoints.down('xl')]: {
+      padding: '3px 0 0 0'
+    },
+    [theme.breakpoints.down('xs')]: {
+      padding: '0'
+    }
+  },
+  logoDivVisible: {
+    opacity: 1,
+    transition: 'opacity 0.9s',
     display: 'flex',
     [theme.breakpoints.down('xl')]: {
       padding: '3px 0 0 0'
@@ -114,7 +127,7 @@ const useStyles = makeStyles(theme => ({
   },
   link: {
     margin: '0px 10px',
-    fontWeight: '400',
+    fontWeight: '300',
     fontSize: '1.1em',
     color: [theme.palette.primary.xdark]
   }
@@ -159,59 +172,59 @@ export default function ElevateAppBar(props) {
             className={classes.container}
           >
             <div>
-              {TitleScroll() && (
-                <div className={classes.content}>
-                  <div className={classes.logodiv}>
-                    <svg
-                      className={classes.logo1}
-                      width='113'
-                      height='123'
-                      viewBox='0 0 113 123'
-                      fill='none'
-                      xmlns='http://www.w3.org/2000/svg'
-                    >
-                      <path
-                        d='M57.3654 50.3343L28.6175 0.878143H112.547L84.0424 50.3343H57.3654Z'
-                        fill={theme.palette.pink.main}
-                      />
-                      <path
-                        d='M57.3457 50.2741H0.18927L42.2994 122.965L70.9265 73.4298L57.3457 50.2741Z'
-                        fill={theme.palette.pink.main}
-                      />
-                      <path
-                        d='M84.1633 50.2746L70.8149 73.3948L57.4664 50.2746L84.1633 50.2746Z'
-                        fill={theme.palette.orange.main}
-                      />
-                    </svg>
-                    <div className={classes.text}>
-                      <Typography className={classes.title}>
-                        Christopher J Foster
-                      </Typography>
-                    </div>
-                    <svg
-                      className={classes.logo2}
-                      width='113'
-                      height='123'
-                      viewBox='0 0 113 123'
-                      fill='none'
-                      xmlns='http://www.w3.org/2000/svg'
-                    >
-                      <path
-                        d='M55.4531 73.2766L84.2009 122.733H0.27174L28.776 73.2766H55.4531Z'
-                        fill={theme.palette.purple.main}
-                      />
-                      <path
-                        d='M55.4727 73.3368H112.629L70.519 0.645485L41.8919 50.1811L55.4727 73.3368Z'
-                        fill={theme.palette.purple.main}
-                      />
-                      <path
-                        d='M28.6551 73.3363L42.0035 50.2161L55.352 73.3363L28.6551 73.3363Z'
-                        fill={theme.palette.orange.main}
-                      />
-                    </svg>
-                  </div>
+              <div
+                className={
+                  TitleScroll() ? classes.logoDivVisible : classes.logoDiv
+                }
+              >
+                <svg
+                  className={classes.logo1}
+                  width='113'
+                  height='123'
+                  viewBox='0 0 113 123'
+                  fill='none'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    d='M57.3654 50.3343L28.6175 0.878143H112.547L84.0424 50.3343H57.3654Z'
+                    fill={theme.palette.pink.main}
+                  />
+                  <path
+                    d='M57.3457 50.2741H0.18927L42.2994 122.965L70.9265 73.4298L57.3457 50.2741Z'
+                    fill={theme.palette.pink.main}
+                  />
+                  <path
+                    d='M84.1633 50.2746L70.8149 73.3948L57.4664 50.2746L84.1633 50.2746Z'
+                    fill={theme.palette.orange.main}
+                  />
+                </svg>
+                <div className={classes.text}>
+                  <Typography className={classes.title}>
+                    Christopher J Foster
+                  </Typography>
                 </div>
-              )}
+                <svg
+                  className={classes.logo2}
+                  width='113'
+                  height='123'
+                  viewBox='0 0 113 123'
+                  fill='none'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    d='M55.4531 73.2766L84.2009 122.733H0.27174L28.776 73.2766H55.4531Z'
+                    fill={theme.palette.purple.main}
+                  />
+                  <path
+                    d='M55.4727 73.3368H112.629L70.519 0.645485L41.8919 50.1811L55.4727 73.3368Z'
+                    fill={theme.palette.purple.main}
+                  />
+                  <path
+                    d='M28.6551 73.3363L42.0035 50.2161L55.352 73.3363L28.6551 73.3363Z'
+                    fill={theme.palette.orange.main}
+                  />
+                </svg>
+              </div>
             </div>
             <div className={classes.linksdiv}>
               {useMediaQuery(theme.breakpoints.up('md')) && (
