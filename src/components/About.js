@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Banner() {
+export default function About() {
   const classes = useStyles();
 
   return <Box className={classes.rectangle} />;

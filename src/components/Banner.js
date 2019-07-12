@@ -47,7 +47,7 @@ const useStyles = makeStyles(theme => ({
   logodiv: {
     display: 'flex'
   },
-  logo1: {
+  trapDesign1: {
     position: 'relative',
     height: 'auto',
     [theme.breakpoints.down('xl')]: {
@@ -66,7 +66,7 @@ const useStyles = makeStyles(theme => ({
       left: '0px'
     }
   },
-  logo2: {
+  trapDesign2: {
     position: 'relative',
     height: 'auto',
     [theme.breakpoints.down('xl')]: {
@@ -156,7 +156,7 @@ export default function Banner() {
         <div className={classes.content}>
           <div className={classes.logodiv}>
             <svg
-              className={classes.logo1}
+              className={classes.trapDesign1}
               viewBox='0 0 113 123'
               fill='none'
               xmlns='http://www.w3.org/2000/svg'
@@ -183,7 +183,7 @@ export default function Banner() {
               </Typography>
             </div>
             <svg
-              className={classes.logo2}
+              className={classes.trapDesign2}
               viewBox='0 0 113 123'
               fill='none'
               xmlns='http://www.w3.org/2000/svg'

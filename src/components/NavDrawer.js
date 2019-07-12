@@ -20,6 +20,7 @@ const useStyles = makeStyles(theme => ({
   },
   menuIcon: {},
   drawerContent: {
+    fontWeight: '300',
     color: [theme.palette.teal.dark]
   }
 }));
@@ -63,7 +64,7 @@ export default function NavDrawer() {
           { text: 'CONTACT', link: 'https://christopherjfoster.dev/index.html' }
         ].map(item => (
           <ListItem button component='a' href={item.link} key={item.text}>
-            <ListItemIcon>
+            <ListItemIcon className={classes.drawerContent}>
               {item.text === 'TOP' ? (
                 <ArrowUpward className={classes.drawerContent} />
               ) : item.text === 'PROJECTS' ? (

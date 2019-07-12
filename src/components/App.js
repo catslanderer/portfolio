@@ -4,7 +4,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import theme from '../assets/themes/main_theme';
 import NavBar from './NavBar';
 import Banner from './Banner';
-import Empty from './Empty';
+import About from './About';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <div className='App'>
         <NavBar />
         <Banner />
-        <Empty />
+        <About />
       </div>
     </ThemeProvider>
   );
