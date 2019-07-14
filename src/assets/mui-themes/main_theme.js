@@ -4,6 +4,12 @@ export default createMuiTheme({
   variables: {
     contactHeight: '500px'
   },
+  links: {
+    top: '#top',
+    projects: '#projects',
+    techStack: '#techStack',
+    contact: '#contact'
+  },
   breakpoints: {
     values: {
       xs: 0,
