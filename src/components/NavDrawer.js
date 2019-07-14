@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   menuIcon: {},
   drawerContent: {
     fontWeight: '300',
-    color: [theme.palette.teal.dark]
+    color: [theme.palette.a.dark]
   }
 }));
 

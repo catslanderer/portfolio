@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
     width: '100%'
   },
   container: {
-    background: [theme.palette.teal.main],
+    background: [theme.palette.a.main],
     width: '100%',
     height: [theme.variables.contactHeight],
     position: 'fixed',

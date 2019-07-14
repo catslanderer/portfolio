@@ -1,7 +1,7 @@
 import React from 'react';
 import ThemeProvider from '@material-ui/styles/ThemeProvider';
 
-import theme from '../assets/themes/main_theme';
+import theme from '../assets/mui-themes/main_theme';
 import NavBar from './NavBar';
 import Banner from './Banner';
 import About from './About';

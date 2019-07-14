@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     height: '100%',
     marginBottom: [theme.variables.contactHeight],
-    background: [theme.palette.pink.main]
+    background: [theme.palette.b.main]
   }
 }));
 
