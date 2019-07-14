@@ -1,6 +1,9 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
 export default createMuiTheme({
+  variables: {
+    contactHeight: '500px'
+  },
   breakpoints: {
     values: {
       xs: 0,
@@ -20,9 +23,9 @@ export default createMuiTheme({
     },
     // orange
     secondary: {
-      light: '#ffe479',
-      main: '#feb249',
-      dark: '#c78214'
+      light: '#ffffff',
+      main: '#FBECEB',
+      dark: '#c8bab9'
     },
     orange: {
       light: '#ffe479',

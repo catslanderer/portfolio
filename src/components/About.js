@@ -1,20 +1,26 @@
 import React from 'react';
-import { Box } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@material-ui/styles/makeStyles';
+// import useTheme from '@material-ui/styles/useTheme';
+import Box from '@material-ui/core/Box';
+
+import PaperTest from './PaperTest';
 
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%'
   },
-  rectangle: {
-    maxWidth: '100%',
-    height: '5000px',
-    background: [theme.palette.pink.main]
+  container: {
+    height: '3000px'
   }
 }));
 
 export default function About() {
   const classes = useStyles();
+  // const theme = useTheme();
 
-  return <Box className={classes.rectangle} />;
+  return (
+    <Box className={classes.container}>
+      <PaperTest />
+    </Box>
+  );
 }

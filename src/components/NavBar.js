@@ -1,12 +1,13 @@
 import React from 'react';
+import makeStyles from '@material-ui/styles/makeStyles';
+import useTheme from '@material-ui/styles/useTheme';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Link } from '@material-ui/core';
+import Link from '@material-ui/core/Link';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 import NavDrawer from './NavDrawer';
@@ -229,10 +230,7 @@ export default function ElevateAppBar(props) {
             <div className={classes.linksdiv}>
               {useMediaQuery(theme.breakpoints.up('md')) && (
                 <Typography>
-                  <Link
-                    href='https://christopherjfoster.dev/index.html'
-                    className={classes.link}
-                  >
+                  <Link href='#top' className={classes.link}>
                     TOP
                   </Link>
                   <Link
@@ -247,10 +245,7 @@ export default function ElevateAppBar(props) {
                   >
                     TECH STACK
                   </Link>
-                  <Link
-                    href='https://christopherjfoster.dev/index.html'
-                    className={classes.link}
-                  >
+                  <Link href='#contact_div' className={classes.link}>
                     CONTACT
                   </Link>
                 </Typography>
