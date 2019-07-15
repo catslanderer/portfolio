@@ -53,16 +53,16 @@ export default function NavDrawer() {
     >
       <List>
         {[
-          { text: 'TOP', link: [theme.links.top] },
+          { text: 'TOP / ABOUT ME', link: [theme.navLinks.top] },
           {
             text: 'PROJECTS',
-            link: [theme.links.project]
+            link: [theme.navLinks.project]
           },
           {
             text: 'TECH STACK',
-            link: [theme.links.techStack]
+            link: [theme.navLinks.techStack]
           },
-          { text: 'CONTACT', link: [theme.links.contact] }
+          { text: 'CONTACT', link: [theme.navLinks.contact] }
         ].map(item => (
           <ListItem button component='a' href={item.link} key={item.text}>
             <ListItemIcon className={classes.drawerContent}>

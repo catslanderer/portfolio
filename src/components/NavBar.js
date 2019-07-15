@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
   container: {
     display: 'grid',
     [theme.breakpoints.down('xl')]: {
-      gridTemplateColumns: 'repeat(2, 50%)'
+      gridTemplateColumns: '40% 60%'
     },
     [theme.breakpoints.down('sm')]: {
       gridTemplateColumns: '75% 25%'
@@ -230,22 +230,19 @@ export default function ElevateAppBar(props) {
             <div className={classes.linksdiv}>
               {useMediaQuery(theme.breakpoints.up('md')) && (
                 <Typography>
-                  <Link href='#top' className={classes.link}>
-                    TOP
+                  <Link href={theme.navLinks.top} className={classes.link}>
+                    TOP / ABOUT ME
                   </Link>
-                  <Link
-                    href='https://christopherjfoster.dev/index.html'
-                    className={classes.link}
-                  >
+                  <Link href={theme.navLinks.projects} className={classes.link}>
                     PROJECTS
                   </Link>
                   <Link
-                    href='https://christopherjfoster.dev/index.html'
+                    href={theme.navLinks.techStack}
                     className={classes.link}
                   >
                     TECH STACK
                   </Link>
-                  <Link href='#contact_div' className={classes.link}>
+                  <Link href={theme.navLinks.contact} className={classes.link}>
                     CONTACT
                   </Link>
                 </Typography>

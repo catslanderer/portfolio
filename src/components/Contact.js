@@ -29,7 +29,7 @@ export default function Contact() {
   // const theme = useTheme();
 
   return (
-    <div id='contact_div'>
+    <div id='contact'>
       <Box className={classes.container}>
         <Typography className={classes.title}>Contact</Typography>
         <Typography className={classes.subtitle}>Chris</Typography>

@@ -4,7 +4,7 @@ export default createMuiTheme({
   variables: {
     contactHeight: '500px'
   },
-  links: {
+  navLinks: {
     top: '#top',
     projects: '#projects',
     techStack: '#techStack',
