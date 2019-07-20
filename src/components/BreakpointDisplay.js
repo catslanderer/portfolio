@@ -5,11 +5,6 @@ import Typography from '@material-ui/core/Typography';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const useStyles = makeStyles(theme => ({
-  breakpointDiv: {
-    // display: 'none',
-    // justifySelf: 'center',
-    // alignSelf: 'center'
-  },
   breakpointText: {
     color: 'white',
     [theme.breakpoints.only('xl')]: {
@@ -35,7 +30,7 @@ export default function BreakpointDisplay() {
   const theme = useTheme();
 
   return (
-    <div className={classes.breakpointDiv}>
+    <div>
       {useMediaQuery(theme.breakpoints.only('xs')) && (
         <Typography className={classes.breakpointText}>
           xs: {theme.breakpoints.values.xs}px - {theme.breakpoints.values.sm}px
