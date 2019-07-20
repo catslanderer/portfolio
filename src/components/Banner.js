@@ -3,7 +3,8 @@ import makeStyles from '@material-ui/styles/makeStyles';
 import useTheme from '@material-ui/styles/useTheme';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+
+import BreakpointDisplay from './BreakpointDisplay';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -122,28 +123,10 @@ const useStyles = makeStyles(theme => ({
       fontSize: '0.56em'
     }
   },
-  breakpointDiv: {
+  breakpointDisplayDiv: {
     // display: 'none',
     justifySelf: 'center',
     alignSelf: 'center'
-  },
-  breakpointText: {
-    color: 'white',
-    [theme.breakpoints.only('xl')]: {
-      fontSize: '3em'
-    },
-    [theme.breakpoints.only('lg')]: {
-      fontSize: '3em'
-    },
-    [theme.breakpoints.only('md')]: {
-      fontSize: '3em'
-    },
-    [theme.breakpoints.only('sm')]: {
-      fontSize: '2em'
-    },
-    [theme.breakpoints.only('xs')]: {
-      fontSize: '1.5em'
-    }
   }
 }));
 
@@ -205,36 +188,8 @@ export default function Banner() {
             </svg>
           </div>
         </div>
-        <div className={classes.breakpointDiv}>
-          {useMediaQuery(theme.breakpoints.only('xs')) && (
-            <Typography className={classes.breakpointText}>
-              xs: {theme.breakpoints.values.xs}px -{' '}
-              {theme.breakpoints.values.sm}px
-            </Typography>
-          )}
-          {useMediaQuery(theme.breakpoints.only('sm')) && (
-            <Typography className={classes.breakpointText}>
-              sm: {theme.breakpoints.values.sm}px -{' '}
-              {theme.breakpoints.values.md}px
-            </Typography>
-          )}
-          {useMediaQuery(theme.breakpoints.only('md')) && (
-            <Typography className={classes.breakpointText}>
-              md: {theme.breakpoints.values.md}px -{' '}
-              {theme.breakpoints.values.lg}px
-            </Typography>
-          )}
-          {useMediaQuery(theme.breakpoints.only('lg')) && (
-            <Typography className={classes.breakpointText}>
-              lg: {theme.breakpoints.values.lg}px -{' '}
-              {theme.breakpoints.values.xl}px
-            </Typography>
-          )}
-          {useMediaQuery(theme.breakpoints.only('xl')) && (
-            <Typography className={classes.breakpointText}>
-              xl: > {theme.breakpoints.values.xl}px
-            </Typography>
-          )}
+        <div className={classes.breakpointDisplayDiv}>
+          <BreakpointDisplay />
         </div>
       </div>
     </Box>
