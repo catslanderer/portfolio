@@ -123,10 +123,12 @@ const useStyles = makeStyles(theme => ({
       fontSize: '0.56em'
     }
   },
-  breakpointDisplayDiv: {
-    // display: 'none',
+  breakpointDisplayDEV: {
     justifySelf: 'center',
     alignSelf: 'center'
+  },
+  breakpointDisplayPROD: {
+    display: 'none'
   }
 }));
 
@@ -188,7 +190,13 @@ export default function Banner() {
             </svg>
           </div>
         </div>
-        <div className={classes.breakpointDisplayDiv}>
+        <div
+          className={
+            process.env.REACT_APP_DEV_MODE === 'on'
+              ? classes.breakpointDisplayDEV
+              : classes.breakpointDisplayPROD
+          }
+        >
           <BreakpointDisplay />
         </div>
       </div>
