@@ -66,14 +66,16 @@ export default function NavDrawer() {
         ].map(item => (
           <ListItem button component='a' href={item.link} key={item.text}>
             <ListItemIcon className={classes.drawerContent}>
-              {item.text === 'TOP' ? (
+              {item.text === 'TOP / ABOUT ME' ? (
                 <ArrowUpward className={classes.drawerContent} />
               ) : item.text === 'PROJECTS' ? (
                 <PhotoLibrary className={classes.drawerContent} />
               ) : item.text === 'TECH STACK' ? (
                 <Memory className={classes.drawerContent} />
-              ) : (
+              ) : item.text === 'CONTACT' ? (
                 <MailIcon className={classes.drawerContent} />
+              ) : (
+                <></>
               )}
             </ListItemIcon>
             <ListItemText
