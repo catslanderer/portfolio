@@ -9,6 +9,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Link from '@material-ui/core/Link';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import classnames from 'classnames';
 
 import NavDrawer from './NavDrawer';
 
@@ -43,87 +44,99 @@ const useStyles = makeStyles(theme => ({
     }
   },
   logoDiv: {
-    opacity: 0,
     transition: 'opacity 0.9s',
     display: 'flex',
     [theme.breakpoints.down('xl')]: {
-      padding: '3px 0 0 0'
+      height: '45px'
+    },
+    [theme.breakpoints.down('lg')]: {
+      height: '45px'
+    },
+    [theme.breakpoints.down('md')]: {
+      height: '45px'
+    },
+    [theme.breakpoints.down('sm')]: {
+      height: '39px'
     },
     [theme.breakpoints.down('xs')]: {
+      height: '31px',
       padding: '0'
     }
   },
   logoDivVisible: {
-    opacity: 1,
-    transition: 'opacity 0.9s',
+    opacity: 1
+  },
+  logoDivInvisible: {
+    opacity: 0
+  },
+  logo1Div: {
     display: 'flex',
-    [theme.breakpoints.down('xl')]: {
-      padding: '3px 0 0 0'
-    },
-    [theme.breakpoints.down('xs')]: {
-      padding: '0'
-    }
+    alignItems: 'flex-start'
   },
   logo1: {
-    position: 'relative',
+    display: 'flex',
     height: 'auto',
     [theme.breakpoints.down('xl')]: {
-      width: '30px',
-      top: '-7px',
-      left: '0px'
+      width: '30px'
     },
     [theme.breakpoints.down('sm')]: {
-      width: '25px',
-      top: '-5px',
-      left: '0px'
+      width: '25px'
     },
     [theme.breakpoints.down('xs')]: {
-      width: '20px',
-      top: '-4px',
-      left: '0px'
+      width: '20px'
     }
   },
+  logo2Div: {
+    display: 'flex',
+    alignItems: 'flex-end'
+  },
   logo2: {
-    position: 'relative',
     height: 'auto',
     [theme.breakpoints.down('xl')]: {
-      width: '30px',
-      top: '5px',
-      left: '-2px'
+      width: '30px'
     },
     [theme.breakpoints.down('sm')]: {
-      width: '25px',
-      top: '4px',
-      left: '-1px'
+      width: '25px'
     },
     [theme.breakpoints.down('xs')]: {
-      width: '20px',
-      top: '4px',
-      left: '0px'
+      width: '20px'
     }
+  },
+  titleDiv: {
+    display: 'flex',
+    alignItems: 'center'
   },
   title: {
     display: 'flex',
+    alignItems: 'center',
     justifyContent: 'center',
     fontWeight: '400',
     color: [theme.palette.primary.xdark],
     [theme.breakpoints.down('xl')]: {
-      fontSize: '1.5em'
+      fontSize: '1.55em'
+    },
+    [theme.breakpoints.down('lg')]: {
+      fontSize: '1.55em'
+    },
+    [theme.breakpoints.down('md')]: {
+      fontSize: '1.55em'
     },
     [theme.breakpoints.down('sm')]: {
-      fontSize: '1.3em'
+      paddingTop: '2px',
+      fontSize: '1.4em'
     },
     [theme.breakpoints.down('xs')]: {
+      paddingBottom: '2px',
       fontSize: '1.1em'
     }
   },
   linksdiv: {
     justifySelf: 'end',
     [theme.breakpoints.down('xl')]: {
-      padding: '6px 0px 0px 0px'
+      padding: '3px 0px 0px 0px'
     },
     [theme.breakpoints.down('sm')]: {
-      padding: '7px 0px 0px 0px'
+      padding: '4px 0px 0px 0px'
     }
   },
   link: {
@@ -174,57 +187,64 @@ export default function ElevateAppBar(props) {
           >
             <div>
               <div
-                className={
-                  TitleScroll() ? classes.logoDivVisible : classes.logoDiv
-                }
+                className={classnames(
+                  classes.logoDiv,
+                  TitleScroll()
+                    ? classes.logoDivVisible
+                    : classes.logoDivInvisible
+                )}
               >
-                <svg
-                  className={classes.logo1}
-                  width='113'
-                  height='123'
-                  viewBox='0 0 113 123'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    d='M57.3654 50.3343L28.6175 0.878143H112.547L84.0424 50.3343H57.3654Z'
-                    fill={theme.palette.b.main}
-                  />
-                  <path
-                    d='M57.3457 50.2741H0.18927L42.2994 122.965L70.9265 73.4298L57.3457 50.2741Z'
-                    fill={theme.palette.b.main}
-                  />
-                  <path
-                    d='M84.1633 50.2746L70.8149 73.3948L57.4664 50.2746L84.1633 50.2746Z'
-                    fill={theme.palette.d.main}
-                  />
-                </svg>
-                <div className={classes.text}>
+                <div className={classes.logo1Div}>
+                  <svg
+                    className={classes.logo1}
+                    width='113'
+                    height='123'
+                    viewBox='0 0 113 123'
+                    fill='none'
+                    xmlns='http://www.w3.org/2000/svg'
+                  >
+                    <path
+                      d='M57.3654 50.3343L28.6175 0.878143H112.547L84.0424 50.3343H57.3654Z'
+                      fill={theme.palette.b.main}
+                    />
+                    <path
+                      d='M57.3457 50.2741H0.18927L42.2994 122.965L70.9265 73.4298L57.3457 50.2741Z'
+                      fill={theme.palette.b.main}
+                    />
+                    <path
+                      d='M84.1633 50.2746L70.8149 73.3948L57.4664 50.2746L84.1633 50.2746Z'
+                      fill={theme.palette.d.main}
+                    />
+                  </svg>
+                </div>
+                <div className={classes.titleDiv}>
                   <Typography className={classes.title}>
                     Christopher J Foster
                   </Typography>
                 </div>
-                <svg
-                  className={classes.logo2}
-                  width='113'
-                  height='123'
-                  viewBox='0 0 113 123'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    d='M55.4531 73.2766L84.2009 122.733H0.27174L28.776 73.2766H55.4531Z'
-                    fill={theme.palette.c.main}
-                  />
-                  <path
-                    d='M55.4727 73.3368H112.629L70.519 0.645485L41.8919 50.1811L55.4727 73.3368Z'
-                    fill={theme.palette.c.main}
-                  />
-                  <path
-                    d='M28.6551 73.3363L42.0035 50.2161L55.352 73.3363L28.6551 73.3363Z'
-                    fill={theme.palette.d.main}
-                  />
-                </svg>
+                <div className={classes.logo2Div}>
+                  <svg
+                    className={classes.logo2}
+                    width='113'
+                    height='123'
+                    viewBox='0 0 113 123'
+                    fill='none'
+                    xmlns='http://www.w3.org/2000/svg'
+                  >
+                    <path
+                      d='M55.4531 73.2766L84.2009 122.733H0.27174L28.776 73.2766H55.4531Z'
+                      fill={theme.palette.c.main}
+                    />
+                    <path
+                      d='M55.4727 73.3368H112.629L70.519 0.645485L41.8919 50.1811L55.4727 73.3368Z'
+                      fill={theme.palette.c.main}
+                    />
+                    <path
+                      d='M28.6551 73.3363L42.0035 50.2161L55.352 73.3363L28.6551 73.3363Z'
+                      fill={theme.palette.d.main}
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
             <div className={classes.linksdiv}>
