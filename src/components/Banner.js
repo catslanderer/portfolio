@@ -4,7 +4,7 @@ import useTheme from '@material-ui/styles/useTheme';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 
-import BreakpointDisplay from './BreakpointDisplay';
+import BreakpointDisplay from '../utilities/BreakpointDisplay';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -164,7 +164,7 @@ export default function Banner() {
                 Christopher J Foster
               </Typography>
               <Typography className={classes.subtitle}>
-                FULL STACK WEB DEVELOPER
+                SOFTWARE ENGINEER
               </Typography>
             </div>
             <svg

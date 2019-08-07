@@ -17,5 +17,5 @@ const useStyles = makeStyles(theme => ({
 export default function PaperTest() {
   const classes = useStyles();
 
-  return <Paper className={classes.rectangle} elevation='4' />;
+  return <Paper className={classes.rectangle} elevation={4} />;
 }
