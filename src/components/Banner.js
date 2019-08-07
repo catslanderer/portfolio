@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
   },
   container: {
     display: 'grid',
-    gridTemplateRows: 'repeat(3, 33%)',
+    gridTemplateRows: '20% 60% 20%',
     maxWidth: '100%',
     background: [theme.palette.primary.main],
     [theme.breakpoints.down('xl')]: {
@@ -48,49 +48,62 @@ const useStyles = makeStyles(theme => ({
     maxWidth: '100%'
   },
   logodiv: {
-    display: 'flex'
-  },
-  trapDesign1: {
-    position: 'relative',
-    height: 'auto',
+    display: 'flex',
     [theme.breakpoints.down('xl')]: {
-      width: '120px',
-      top: '-40px',
-      left: '0px'
+      height: '182px'
     },
     [theme.breakpoints.down('sm')]: {
-      width: '80px',
-      top: '-27px',
-      left: '0px'
+      height: '138px'
     },
     [theme.breakpoints.down('xs')]: {
-      width: '50px',
-      top: '-17px',
-      left: '0px'
+      height: '75px'
     }
   },
-  trapDesign2: {
-    position: 'relative',
+  logo1Div: {
+    display: 'flex',
+    alignItems: 'flex-start'
+  },
+  logo1: {
     height: 'auto',
     [theme.breakpoints.down('xl')]: {
-      width: '120px',
-      top: '12px',
-      left: '-7px'
+      width: '120px'
     },
     [theme.breakpoints.down('sm')]: {
-      width: '80px',
-      top: '8px',
-      left: '-7px'
+      width: '90px'
     },
     [theme.breakpoints.down('xs')]: {
-      width: '50px',
-      top: '4px',
-      left: '-7px'
+      width: '50px'
+    }
+  },
+  logo2Div: {
+    display: 'flex',
+    alignItems: 'flex-end'
+  },
+  logo2: {
+    height: 'auto',
+    [theme.breakpoints.down('xl')]: {
+      width: '120px'
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '90px'
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: '50px'
     }
   },
   text: {
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    justifyContent: 'center',
+    [theme.breakpoints.down('xl')]: {
+      paddingBottom: '10px'
+    },
+    [theme.breakpoints.down('sm')]: {
+      paddingBottom: '8px'
+    },
+    [theme.breakpoints.down('xs')]: {
+      paddingBottom: '2px'
+    }
   },
   title: {
     display: 'flex',
@@ -101,7 +114,7 @@ const useStyles = makeStyles(theme => ({
       fontSize: '3em'
     },
     [theme.breakpoints.down('sm')]: {
-      fontSize: '2em'
+      fontSize: '2.4em'
     },
     [theme.breakpoints.down('xs')]: {
       fontSize: '1.2em'
@@ -117,7 +130,7 @@ const useStyles = makeStyles(theme => ({
       fontSize: '1.4em'
     },
     [theme.breakpoints.down('sm')]: {
-      fontSize: '0.93em'
+      fontSize: '1.1em'
     },
     [theme.breakpoints.down('xs')]: {
       fontSize: '0.56em'
@@ -142,25 +155,27 @@ export default function Banner() {
         <div />
         <div className={classes.content}>
           <div className={classes.logodiv}>
-            <svg
-              className={classes.trapDesign1}
-              viewBox='0 0 113 123'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <path
-                d='M57.3654 50.3343L28.6175 0.878143H112.547L84.0424 50.3343H57.3654Z'
-                fill={theme.palette.b.main}
-              />
-              <path
-                d='M57.3457 50.2741H0.18927L42.2994 122.965L70.9265 73.4298L57.3457 50.2741Z'
-                fill={theme.palette.b.main}
-              />
-              <path
-                d='M84.1633 50.2746L70.8149 73.3948L57.4664 50.2746L84.1633 50.2746Z'
-                fill={theme.palette.d.main}
-              />
-            </svg>
+            <div className={classes.logo1Div}>
+              <svg
+                className={classes.logo1}
+                viewBox='0 0 113 123'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <path
+                  d='M57.3654 50.3343L28.6175 0.878143H112.547L84.0424 50.3343H57.3654Z'
+                  fill={theme.palette.b.main}
+                />
+                <path
+                  d='M57.3457 50.2741H0.18927L42.2994 122.965L70.9265 73.4298L57.3457 50.2741Z'
+                  fill={theme.palette.b.main}
+                />
+                <path
+                  d='M84.1633 50.2746L70.8149 73.3948L57.4664 50.2746L84.1633 50.2746Z'
+                  fill={theme.palette.d.main}
+                />
+              </svg>
+            </div>
             <div className={classes.text}>
               <Typography className={classes.title}>
                 Christopher J Foster
@@ -169,25 +184,27 @@ export default function Banner() {
                 SOFTWARE ENGINEER
               </Typography>
             </div>
-            <svg
-              className={classes.trapDesign2}
-              viewBox='0 0 113 123'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <path
-                d='M55.4531 73.2766L84.2009 122.733H0.27174L28.776 73.2766H55.4531Z'
-                fill={theme.palette.c.main}
-              />
-              <path
-                d='M55.4727 73.3368H112.629L70.519 0.645485L41.8919 50.1811L55.4727 73.3368Z'
-                fill={theme.palette.c.main}
-              />
-              <path
-                d='M28.6551 73.3363L42.0035 50.2161L55.352 73.3363L28.6551 73.3363Z'
-                fill={theme.palette.d.main}
-              />
-            </svg>
+            <div className={classes.logo2Div}>
+              <svg
+                className={classes.logo2}
+                viewBox='0 0 113 123'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <path
+                  d='M55.4531 73.2766L84.2009 122.733H0.27174L28.776 73.2766H55.4531Z'
+                  fill={theme.palette.c.main}
+                />
+                <path
+                  d='M55.4727 73.3368H112.629L70.519 0.645485L41.8919 50.1811L55.4727 73.3368Z'
+                  fill={theme.palette.c.main}
+                />
+                <path
+                  d='M28.6551 73.3363L42.0035 50.2161L55.352 73.3363L28.6551 73.3363Z'
+                  fill={theme.palette.d.main}
+                />
+              </svg>
+            </div>
           </div>
         </div>
         <div

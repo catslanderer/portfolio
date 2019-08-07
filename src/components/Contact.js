@@ -36,8 +36,8 @@ export default function Contact() {
       <Box className={classes.container}>
         <Typography className={classes.title}>Contact Me</Typography>
         <Typography className={classes.subtitle}>
-          If you have any questions about my past, present, or even future
-          projects, please don't hesitate to reach out:
+          If you have any questions about my work (past, present, or even
+          future), please don't hesitate to reach out:
         </Typography>
         <Typography className={classes.subtitle}>GitHub</Typography>
         <Typography className={classes.subtitle}>So on...</Typography>
