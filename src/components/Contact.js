@@ -12,9 +12,10 @@ const useStyles = makeStyles(theme => ({
     background: [theme.palette.a.main],
     width: '100%',
     height: [theme.variables.contactHeight],
-    position: 'fixed',
-    bottom: '0',
-    zIndex: '-1',
+    // No mobile support for the following:
+    // position: 'fixed',
+    // bottom: '0',
+    // zIndex: '-1',
     padding: '10px'
   },
   title: {
