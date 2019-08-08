@@ -124,7 +124,7 @@ const useStyles = makeStyles(theme => ({
       paddingTop: '2px',
       fontSize: '1.4em'
     },
-    [theme.breakpoints.only('xs')]: {
+    [theme.breakpoints.down('xs')]: {
       paddingBottom: '2px',
       fontSize: '1.1em'
     }
@@ -160,7 +160,7 @@ function ElevationScroll({ children }) {
 
 function TitleScroll() {
   const theme = useTheme();
-  const xs = useMediaQuery(theme.breakpoints.only('xs'));
+  const xs = useMediaQuery(theme.breakpoints.down('xs'));
   const sm = useMediaQuery(theme.breakpoints.only('sm'));
   const triggerTitle = useScrollTrigger({
     disableHysteresis: true,

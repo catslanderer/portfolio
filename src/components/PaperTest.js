@@ -9,7 +9,6 @@ const useStyles = makeStyles(theme => ({
   rectangle: {
     width: '100%',
     height: '100%',
-    marginBottom: [theme.variables.contactHeight],
     background: [theme.palette.b.main]
   }
 }));
