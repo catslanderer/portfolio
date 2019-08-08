@@ -2,24 +2,30 @@ import React from 'react';
 import makeStyles from '@material-ui/styles/makeStyles';
 import useTheme from '@material-ui/styles/useTheme';
 import Drawer from '@material-ui/core/Drawer';
-import Menu from '@material-ui/icons/Menu';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 import ArrowUpward from '@material-ui/icons/ArrowUpward';
 import PhotoLibrary from '@material-ui/icons/PhotoLibrary';
 import Memory from '@material-ui/icons/Memory';
 import MailIcon from '@material-ui/icons/Mail';
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    [theme.breakpoints.only('sm')]: {
+      width: '32px',
+      height: '32px'
+    }
+  },
   list: {
     width: 250
   },
   fullList: {
     width: 'auto'
   },
-  menuIcon: {},
   drawerContent: {
     fontWeight: '300',
     color: [theme.palette.a.dark]
@@ -90,11 +96,17 @@ export default function NavDrawer() {
 
   return (
     <div>
-      <Menu
-        fontSize='large'
-        style={{ color: [theme.palette.primary.xdark] }}
+      <IconButton
+        color='primary.xdark'
+        aria-label='open drawer'
         onClick={toggleDrawer('top', true)}
-      />
+      >
+        <MenuIcon
+          classes={{
+            root: classes.root
+          }}
+        />
+      </IconButton>
       <Drawer
         anchor='top'
         open={state.top}

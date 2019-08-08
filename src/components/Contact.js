@@ -19,10 +19,12 @@ const useStyles = makeStyles(theme => ({
     padding: '10px'
   },
   title: {
+    color: [theme.palette.primary.xdark],
     fontSize: '3em',
     padding: '10px 0px'
   },
   subtitle: {
+    color: [theme.palette.primary.xdark],
     fontSize: '1.5em'
   }
 }));
@@ -34,10 +36,10 @@ export default function Contact() {
   return (
     <div id='contact'>
       <Box className={classes.container}>
-        <Typography className={classes.title}>Contact Me</Typography>
+        <Typography className={classes.title}>Contact</Typography>
         <Typography className={classes.subtitle}>
-          If you have any questions about my work (past, present, or even
-          future), please don't hesitate to reach out:
+          If you have questions about my work (past, present, or even future),
+          please don't hesitate to reach out:
         </Typography>
         <Typography className={classes.subtitle}>GitHub</Typography>
         <Typography className={classes.subtitle}>So on...</Typography>

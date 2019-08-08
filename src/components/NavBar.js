@@ -29,7 +29,12 @@ const useStyles = makeStyles(theme => ({
     }
   },
   gutters: {
-    padding: '0px 16px'
+    [theme.breakpoints.down('xl')]: {
+      padding: '0px 16px'
+    },
+    [theme.breakpoints.down('sm')]: {
+      padding: '0px 0px 0px 16px'
+    }
   },
   root: {
     width: '100%'
@@ -115,28 +120,23 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('xl')]: {
       fontSize: '1.55em'
     },
-    [theme.breakpoints.down('lg')]: {
-      fontSize: '1.55em'
-    },
-    [theme.breakpoints.down('md')]: {
-      fontSize: '1.55em'
-    },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.only('sm')]: {
       paddingTop: '2px',
       fontSize: '1.4em'
     },
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.only('xs')]: {
       paddingBottom: '2px',
       fontSize: '1.1em'
     }
   },
   linksdiv: {
     justifySelf: 'end',
+    alignItems: 'flex-start',
     [theme.breakpoints.down('xl')]: {
-      padding: '3px 0px 0px 0px'
+      paddingTop: '3px'
     },
     [theme.breakpoints.down('sm')]: {
-      padding: '4px 0px 0px 0px'
+      padding: '0px'
     }
   },
   link: {
