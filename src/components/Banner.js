@@ -150,8 +150,8 @@ export default function Banner() {
   const theme = useTheme();
 
   return (
-    <Box className='Banner'>
-      <div className={classes.container}>
+    <div id='banner'>
+      <Box className={classes.container}>
         <div />
         <div className={classes.content}>
           <div className={classes.logodiv}>
@@ -216,7 +216,7 @@ export default function Banner() {
         >
           <BreakpointDisplay />
         </div>
-      </div>
-    </Box>
+      </Box>
+    </div>
   );
 }

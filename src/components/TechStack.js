@@ -3,20 +3,29 @@ import makeStyles from '@material-ui/styles/makeStyles';
 import useTheme from '@material-ui/styles/useTheme';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-
-import gitHubIcon from '../assets/icons/gh_icon_40px_50op.svg';
-import linkedInIcon from '../assets/icons/li_icon_40px_50op.svg';
-import twitterIcon from '../assets/icons/tw_icon_40px_50op.svg';
 
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%'
   },
+  techStack: {
+    [theme.breakpoints.down('xl')]: {
+      paddingTop: '64px',
+      marginTop: '-64px'
+    },
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: '56px',
+      marginTop: '-56px'
+    },
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: '48px',
+      marginTop: '-48px'
+    }
+  },
   container: {
-    background: [theme.palette.a.main],
+    background: [theme.palette.b.main],
     width: '100%',
-    height: [theme.variables.contactHeight],
+    height: '1000px',
     padding: '15px'
   },
   headerDiv: {
@@ -64,46 +73,14 @@ export default function Contact() {
   const theme = useTheme();
 
   return (
-    <div id='contact'>
+    <div id='techStack' className={classes.techStack}>
       <Box className={classes.container}>
         <div className={classes.headerDiv}>
-          <Typography className={classes.title}>Contact</Typography>
-          <div className={classes.linksDiv}>
-            <IconButton
-              className={classes.linkIconDiv}
-              href='https://github.com/ChristopherJFoster'
-            >
-              <img
-                className={classes.linkIcon}
-                src={gitHubIcon}
-                alt='GitHub icon/link'
-              />
-            </IconButton>
-            <IconButton
-              className={classes.linkIconDiv}
-              href='https://www.linkedin.com/in/christopherjfoster/'
-            >
-              <img
-                className={classes.linkIcon}
-                src={linkedInIcon}
-                alt='LinkedIn icon/link'
-              />
-            </IconButton>
-            <IconButton
-              className={classes.linkIconDiv}
-              href='https://twitter.com/chrstphrjfstr'
-            >
-              <img
-                className={classes.linkIcon}
-                src={twitterIcon}
-                alt='Twitter icon/link'
-              />
-            </IconButton>
-          </div>
+          <Typography className={classes.title}>Tech Stack</Typography>
         </div>
         <Typography className={classes.contentText}>
-          If you have questions about my work (past, present, or even future),
-          please don't hesitate to reach out.
+          I'm familiar with the following languages, frameworks, libraries, and
+          technologies.
         </Typography>
         <Typography style={{ color: [theme.palette.b.main] }}>
           {'<contact form goes here>'}
