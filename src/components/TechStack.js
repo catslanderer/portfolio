@@ -48,30 +48,19 @@ const useStyles = makeStyles(theme => ({
       fontSize: '2.5em',
     },
   },
-  linkIconDiv: {
-    [theme.breakpoints.down('xl')]: {
-      height: '64px',
-    },
-    [theme.breakpoints.down('xs')]: {
-      height: '56px',
-    },
-  },
-  linkIcon: {
-    [theme.breakpoints.down('xl')]: {
-      height: '40px',
-    },
-    [theme.breakpoints.down('xs')]: {
-      height: '32px',
-    },
-  },
   contentText: {
     color: [theme.palette.primary.xdark],
     fontSize: '1.5em',
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+
+    // textAlign: 'center',
+    // color: theme.palette.text.secondary,
   },
   gridDiv: {
     display: 'flex',
@@ -102,9 +91,6 @@ export default function Contact() {
         <Typography className={classes.contentText}>
           I'm familiar with the following languages, frameworks, libraries, and
           technologies.
-        </Typography>
-        <Typography style={{ color: [theme.palette.b.main] }}>
-          {'<contact form goes here>'}
         </Typography>
         <div className={classes.root}>
           <div className={classes.gridDiv}>
