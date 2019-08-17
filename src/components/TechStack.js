@@ -27,7 +27,6 @@ const useStyles = makeStyles(theme => ({
   container: {
     background: [theme.palette.b.main],
     width: '100%',
-    height: '1750px',
     padding: '15px',
   },
   headerDiv: {
@@ -58,12 +57,14 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
-
-    // textAlign: 'center',
-    // color: theme.palette.text.secondary,
   },
   gridDiv: {
     display: 'flex',
+  },
+  gridContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    padding: '20px 0 10px 0',
   },
   gridItem: {
     display: 'flex',
@@ -94,7 +95,7 @@ export default function Contact() {
         </Typography>
         <div className={classes.root}>
           <div className={classes.gridDiv}>
-            <Grid container spacing={4}>
+            <Grid className={classes.gridContainer} container spacing={3}>
               {[
                 theme.logoProps.css3,
                 theme.logoProps.express,
@@ -118,7 +119,7 @@ export default function Contact() {
                 <Grid
                   className={classes.gridItem}
                   item
-                  xs={3}
+                  xs={'auto'}
                   component='a'
                   href={item.link}
                   key={item.text}
