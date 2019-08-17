@@ -8,102 +8,104 @@ import BreakpointDisplay from '../utilities/BreakpointDisplay';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '100%'
+    width: '100%',
   },
   container: {
     display: 'grid',
-    gridTemplateRows: '20% 60% 20%',
     maxWidth: '100%',
     background: [theme.palette.primary.main],
     [theme.breakpoints.down('xl')]: {
       width: '100%',
-      height: '500px'
+      height: '500px',
+      gridTemplateRows: '25% 50% 25%',
     },
     [theme.breakpoints.down('sm')]: {
-      height: '350px'
+      height: '350px',
+      gridTemplateRows: '22% 50% 28%',
     },
     [theme.breakpoints.down('xs')]: {
-      height: '225px'
-    }
+      height: '200px',
+      gridTemplateRows: '20% 50% 30%',
+    },
   },
   linksdiv: {
     justifySelf: 'end',
     [theme.breakpoints.down('xl')]: {
-      padding: '15px 8px 0px 0px'
+      padding: '15px 8px 0px 0px',
     },
     [theme.breakpoints.down('sm')]: {
-      padding: '7px 12px 0px 0px'
-    }
+      padding: '7px 12px 0px 0px',
+    },
   },
   link: {
     margin: '10px',
     fontWeight: '300',
     fontSize: '1.1em',
-    color: [theme.palette.primary.xdark]
+    color: [theme.palette.primary.xdark],
   },
   content: {
     display: 'grid',
     justifySelf: 'center',
     alignSelf: 'start',
-    maxWidth: '100%'
+    maxWidth: '100%',
   },
   logodiv: {
     display: 'flex',
     [theme.breakpoints.down('xl')]: {
-      height: '182px'
+      height: '182px',
     },
     [theme.breakpoints.down('sm')]: {
-      height: '138px'
+      height: '138px',
     },
     [theme.breakpoints.down('xs')]: {
-      height: '75px'
-    }
+      height: '75px',
+    },
   },
   logo1Div: {
     display: 'flex',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
   },
   logo1: {
     height: 'auto',
     [theme.breakpoints.down('xl')]: {
-      width: '120px'
+      width: '120px',
     },
     [theme.breakpoints.down('sm')]: {
-      width: '90px'
+      width: '90px',
     },
     [theme.breakpoints.down('xs')]: {
-      width: '50px'
-    }
+      width: '50px',
+    },
   },
   logo2Div: {
     display: 'flex',
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
   },
   logo2: {
     height: 'auto',
     [theme.breakpoints.down('xl')]: {
-      width: '120px'
+      width: '120px',
     },
     [theme.breakpoints.down('sm')]: {
-      width: '90px'
+      width: '90px',
     },
     [theme.breakpoints.down('xs')]: {
-      width: '50px'
-    }
+      width: '50px',
+    },
   },
   text: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     [theme.breakpoints.down('xl')]: {
-      paddingBottom: '10px'
+      paddingBottom: '10px',
     },
     [theme.breakpoints.down('sm')]: {
-      paddingBottom: '8px'
+      paddingBottom: '8px',
     },
     [theme.breakpoints.down('xs')]: {
-      paddingBottom: '2px'
-    }
+      paddingBottom: '2px',
+    },
   },
   title: {
     display: 'flex',
@@ -111,14 +113,14 @@ const useStyles = makeStyles(theme => ({
     fontWeight: '700',
     color: [theme.palette.primary.xdark],
     [theme.breakpoints.down('xl')]: {
-      fontSize: '3em'
+      fontSize: '3em',
     },
     [theme.breakpoints.down('sm')]: {
-      fontSize: '2.4em'
+      fontSize: '2.4em',
     },
     [theme.breakpoints.down('xs')]: {
-      fontSize: '1.2em'
-    }
+      fontSize: '1.2em',
+    },
   },
   subtitle: {
     marginTop: '3px',
@@ -127,22 +129,22 @@ const useStyles = makeStyles(theme => ({
     fontWeight: '300',
     color: [theme.palette.primary.xdark],
     [theme.breakpoints.down('xl')]: {
-      fontSize: '1.4em'
+      fontSize: '1.4em',
     },
     [theme.breakpoints.down('sm')]: {
-      fontSize: '1.1em'
+      fontSize: '1.1em',
     },
     [theme.breakpoints.down('xs')]: {
-      fontSize: '0.56em'
-    }
+      fontSize: '0.56em',
+    },
   },
   breakpointDisplayDEV: {
     justifySelf: 'center',
-    alignSelf: 'center'
+    alignSelf: 'center',
   },
   breakpointDisplayPROD: {
-    display: 'none'
-  }
+    display: 'none',
+  },
 }));
 
 export default function Banner() {
