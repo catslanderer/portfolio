@@ -3,7 +3,7 @@ import makeStyles from '@material-ui/styles/makeStyles';
 import useTheme from '@material-ui/styles/useTheme';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
+import Card from '@material-ui/core/Card';
 import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles(theme => ({
@@ -51,12 +51,18 @@ const useStyles = makeStyles(theme => ({
     color: [theme.palette.primary.xdark],
     fontSize: '1.5em',
   },
-  paper: {
+  card: {
     padding: theme.spacing(2),
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
+    [theme.breakpoints.down('xl')]: {
+      width: '100%',
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+    },
   },
   gridDiv: {
     display: 'flex',
@@ -124,14 +130,14 @@ export default function Contact() {
                   href={item.link}
                   key={item.text}
                 >
-                  <Paper className={classes.paper}>
+                  <Card className={classes.card}>
                     <img
                       className={classes.logo}
                       src={item.img}
                       alt={item.alt}
                     />
                     {item.text}
-                  </Paper>
+                  </Card>
                 </Grid>
               ))}
             </Grid>
