@@ -1,6 +1,5 @@
 import React from 'react';
 import makeStyles from '@material-ui/styles/makeStyles';
-import useTheme from '@material-ui/styles/useTheme';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
@@ -8,16 +7,17 @@ import IconButton from '@material-ui/core/IconButton';
 import gitHubIcon from '../assets/icons/gh_icon_40px_50op.svg';
 import linkedInIcon from '../assets/icons/li_icon_40px_50op.svg';
 import twitterIcon from '../assets/icons/tw_icon_40px_50op.svg';
+import ContactForm from './ContactForm';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '100%'
+    width: '100%',
   },
   container: {
     background: [theme.palette.a.main],
     width: '100%',
     height: [theme.variables.contactHeight],
-    padding: '15px'
+    padding: '15px',
   },
   headerDiv: {
     display: 'flex',
@@ -25,43 +25,42 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center',
     paddingBottom: '10px',
     [theme.breakpoints.only('xxs')]: {
-      flexDirection: 'column'
-    }
+      flexDirection: 'column',
+    },
   },
   title: {
     color: [theme.palette.primary.xdark],
     [theme.breakpoints.down('xl')]: {
-      fontSize: '3em'
+      fontSize: '3em',
     },
     [theme.breakpoints.down('xs')]: {
-      fontSize: '2.5em'
-    }
+      fontSize: '2.5em',
+    },
   },
   linkIconDiv: {
     [theme.breakpoints.down('xl')]: {
-      height: '64px'
+      height: '64px',
     },
     [theme.breakpoints.down('xs')]: {
-      height: '56px'
-    }
+      height: '56px',
+    },
   },
   linkIcon: {
     [theme.breakpoints.down('xl')]: {
-      height: '40px'
+      height: '40px',
     },
     [theme.breakpoints.down('xs')]: {
-      height: '32px'
-    }
+      height: '32px',
+    },
   },
   contentText: {
     color: [theme.palette.primary.xdark],
-    fontSize: '1.5em'
-  }
+    fontSize: '1.5em',
+  },
 }));
 
 export default function Contact() {
   const classes = useStyles();
-  const theme = useTheme();
 
   return (
     <div id='contact'>
@@ -105,9 +104,7 @@ export default function Contact() {
           If you have questions about my work (past, present, or even future),
           please don't hesitate to reach out.
         </Typography>
-        <Typography style={{ color: [theme.palette.b.main] }}>
-          {'<contact form goes here>'}
-        </Typography>
+        <ContactForm />
       </Box>
     </div>
   );
