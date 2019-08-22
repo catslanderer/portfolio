@@ -27,12 +27,12 @@ const useStyles = makeStyles(theme => ({
   container: {
     background: [theme.palette.b.main],
     width: '100%',
-    padding: '15px',
+    padding: '30px',
   },
   headerDiv: {
     display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    // justifyContent: 'space-between',
+    // alignItems: 'center',
     paddingBottom: '10px',
     [theme.breakpoints.only('xxs')]: {
       flexDirection: 'column',
