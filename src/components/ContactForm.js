@@ -4,6 +4,8 @@ import { fade, withStyles, makeStyles } from '@material-ui/core/styles';
 import InputBase from '@material-ui/core/InputBase';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
+import Button from '@material-ui/core/Button';
+import SendIcon from '@material-ui/icons/Send';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -13,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexWrap: 'wrap',
     flexDirection: 'column',
-    alignItems: 'center',
+    alignItems: 'flex-start',
   },
   textFieldDiv: {
     margin: '20px 0 10px 0',
@@ -26,6 +28,13 @@ const useStyles = makeStyles(theme => ({
   textAreaDiv: {
     display: 'flex',
     width: '100%',
+  },
+  buttonDiv: {
+    padding: '15px',
+    width: '100%',
+    maxWidth: '800px',
+    display: 'flex',
+    justifyContent: 'flex-end',
   },
   textField: {
     flexGrow: 1,
@@ -53,6 +62,22 @@ const useStyles = makeStyles(theme => ({
     background: '#FBECEB !important',
     borderTopLeftRadius: '4px !important',
     borderTopRightRadius: '4px !important',
+  },
+  button: {
+    // marginLeft: '15px',
+    background: theme.palette.d.main,
+    color: theme.palette.c.main,
+    '&:hover': {
+      background: theme.palette.d.light,
+      color: theme.palette.c.main,
+    },
+    width: 'calc(50% - 15px)',
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+    },
+  },
+  rightIcon: {
+    marginLeft: theme.spacing(1),
   },
 }));
 
@@ -95,7 +120,14 @@ export default function OutlinedTextFields() {
   };
 
   return (
-    <form className={classes.container} noValidate autoComplete='off'>
+    <form
+      name='portfolio contact form'
+      className={classes.container}
+      noValidate
+      autoComplete='off'
+      data-netlify='true'
+      data-netlify-recaptcha='true'
+    >
       <div className={classes.textFieldDiv}>
         <FormControl className={clsx(classes.formControl, classes.textField)}>
           <InputLabel
@@ -148,6 +180,7 @@ export default function OutlinedTextFields() {
             id='text-input-message'
             required={true}
             label='Message'
+            placeholder='I love your work 😏'
             className={clsx(
               classes.textInput,
               classes.textArea,
@@ -159,6 +192,17 @@ export default function OutlinedTextFields() {
             rows={5}
           />
         </FormControl>
+      </div>
+      <div className={classes.buttonDiv}>
+        <div data-netlify-recaptcha='true' />
+        <Button
+          variant='contained'
+          color='secondary'
+          className={classes.button}
+        >
+          SEND
+          <SendIcon className={classes.rightIcon} />
+        </Button>
       </div>
     </form>
   );
