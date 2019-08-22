@@ -122,14 +122,16 @@ export default function OutlinedTextFields() {
   };
 
   const handleSubmit = e => {
+    console.log('submit!');
+    console.log(values.name, values.email, values.message);
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
         'form-name': 'portfolio contact',
-        name: window.name.value,
-        email: window.email.value,
-        message: window.message.value,
+        name: values.name,
+        email: values.email,
+        message: values.message,
       }),
     })
       .then(() => alert('Success!'))
@@ -204,7 +206,7 @@ export default function OutlinedTextFields() {
             id='text-input-message'
             required={true}
             label='Message'
-            placeholder='I love your work 😏'
+            placeholder='I love your work 😉'
             className={clsx(
               classes.textInput,
               classes.textArea,
