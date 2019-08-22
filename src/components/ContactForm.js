@@ -30,11 +30,12 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
   },
   buttonDiv: {
-    padding: '15px',
+    padding: '10px 15px 15px 15px',
     width: '100%',
     maxWidth: '800px',
     display: 'flex',
-    justifyContent: 'flex-end',
+    flexDirection: 'column',
+    alignItems: 'flex-end',
   },
   textField: {
     flexGrow: 1,
@@ -49,7 +50,7 @@ const useStyles = makeStyles(theme => ({
   },
   formControl: {
     flexGrow: 1,
-    padding: '0 15px 15px 15px',
+    padding: '0 15px 10px 15px',
   },
   inputLabel: {
     color: theme.palette.a.xdark + ' !important',
@@ -63,15 +64,16 @@ const useStyles = makeStyles(theme => ({
     borderTopLeftRadius: '4px !important',
     borderTopRightRadius: '4px !important',
   },
+  recaptcha: {},
   button: {
-    // marginLeft: '15px',
     background: theme.palette.d.main,
     color: theme.palette.c.main,
     '&:hover': {
       background: theme.palette.d.light,
       color: theme.palette.c.main,
     },
-    width: 'calc(50% - 15px)',
+    width: '301px',
+    margin: '20px 2px 0 0',
     [theme.breakpoints.down('xs')]: {
       width: '100%',
     },
@@ -121,9 +123,9 @@ export default function OutlinedTextFields() {
       .join('&');
   };
 
+  // grecaptcha.getResponse();
+
   const handleSubmit = e => {
-    console.log('submit!');
-    console.log(values.name, values.email, values.message);
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -150,7 +152,6 @@ export default function OutlinedTextFields() {
       noValidate
       autoComplete='off'
       data-netlify='true'
-      data-netlify-recaptcha='true'
       onSubmit={handleSubmit}
     >
       <input type='hidden' name='form-name' value='portfolio contact' />
@@ -219,8 +220,12 @@ export default function OutlinedTextFields() {
           />
         </FormControl>
       </div>
-      <div data-netlify-recaptcha='true' />
       <div className={classes.buttonDiv}>
+        <div
+          data-size='compact'
+          className={clsx('g-recaptcha', classes.recaptcha)}
+          data-sitekey='6LfhQ7QUAAAAAKctBvQCiZqHe09iiyrd2a-NGEWv'
+        />
         <Button
           variant='contained'
           type='submit'
