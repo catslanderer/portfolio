@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
   container: {
     background: [theme.palette.b.main],
     width: '100%',
-    padding: '25px 30px 30px 30px',
+    padding: '20px 30px 30px 30px',
   },
   headerDiv: {
     display: 'flex',
@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   title: {
-    color: [theme.palette.primary.xdark],
+    color: [theme.palette.c.main],
     [theme.breakpoints.down('xl')]: {
       fontSize: '3em',
     },
@@ -46,7 +46,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   contentText: {
-    color: [theme.palette.primary.xdark],
+    color: [theme.palette.c.main],
     fontSize: '1.5em',
   },
   card: {
