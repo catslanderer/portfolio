@@ -115,19 +115,43 @@ export default function OutlinedTextFields() {
     message: '',
   });
 
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+  };
+
+  const handleSubmit = e => {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': 'portfolio contact',
+        name: window.name.value,
+        email: window.email.value,
+        message: window.message.value,
+      }),
+    })
+      .then(() => alert('Success!'))
+      .catch(error => alert(error));
+    e.preventDefault();
+  };
+
   const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value });
   };
 
   return (
     <form
-      name='portfolio contact form'
+      name='portfolio contact'
       className={classes.container}
       noValidate
       autoComplete='off'
       data-netlify='true'
       data-netlify-recaptcha='true'
+      onSubmit={handleSubmit}
     >
+      <input type='hidden' name='form-name' value='portfolio contact' />
       <div className={classes.textFieldDiv}>
         <FormControl className={clsx(classes.formControl, classes.textField)}>
           <InputLabel
@@ -197,6 +221,7 @@ export default function OutlinedTextFields() {
       <div className={classes.buttonDiv}>
         <Button
           variant='contained'
+          type='submit'
           color='secondary'
           className={classes.button}
         >
