@@ -20,9 +20,7 @@ import svg_logo from '../logos/svg_logo.svg';
 import xd_logo from '../logos/xd_logo.svg';
 
 export default createMuiTheme({
-  variables: {
-    contactHeight: '500px',
-  },
+  variables: {},
   navLinks: {
     top: '#top',
     projects: '#projects',

@@ -16,7 +16,6 @@ const useStyles = makeStyles(theme => ({
   container: {
     background: [theme.palette.a.main],
     width: '100%',
-    height: [theme.variables.contactHeight],
     padding: '15px',
   },
   headerDiv: {
@@ -24,6 +23,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingBottom: '10px',
+    padding: '0 15px',
     [theme.breakpoints.only('xxs')]: {
       flexDirection: 'column',
     },
@@ -56,6 +56,7 @@ const useStyles = makeStyles(theme => ({
   contentText: {
     color: [theme.palette.primary.xdark],
     fontSize: '1.5em',
+    padding: '0 15px',
   },
 }));
 

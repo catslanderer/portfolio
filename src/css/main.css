@@ -130,6 +130,17 @@ html {
   font-family: 'Roboto', sans-serif;
   scroll-behavior: smooth;
 }
+html input:-webkit-autofill,
+html input:-webkit-autofill:hover,
+html input:-webkit-autofill:focus,
+html input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #fbeceb inset !important;
+  box-shadow: 0 0 0 30px #fbeceb inset !important;
+  -webkit-border-top-left-radius: 4px !important;
+  border-top-left-radius: 4px !important;
+  -webkit-border-top-right-radius: 4px !important;
+  border-top-right-radius: 4px !important;
+}
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
