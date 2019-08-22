@@ -1,6 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
 import { fade, withStyles, makeStyles } from '@material-ui/core/styles';
+import useTheme from '@material-ui/styles/useTheme';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import InputBase from '@material-ui/core/InputBase';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
@@ -30,7 +32,7 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
   },
   buttonDiv: {
-    padding: '10px 15px 15px 15px',
+    padding: '20px 15px 15px 15px',
     width: '100%',
     maxWidth: '800px',
     display: 'flex',
@@ -53,7 +55,7 @@ const useStyles = makeStyles(theme => ({
     padding: '0 15px 10px 15px',
   },
   inputLabel: {
-    color: theme.palette.a.xdark + ' !important',
+    color: theme.palette.c.main + ' !important',
   },
   shrink: {
     fontSize: '1.6em',
@@ -87,9 +89,6 @@ const TextInput = withStyles(theme => ({
       marginTop: theme.spacing(3),
     },
   },
-  multiline: {
-    padding: 0,
-  },
   input: {
     borderRadius: 4,
     position: 'relative',
@@ -109,6 +108,7 @@ const TextInput = withStyles(theme => ({
 
 export default function OutlinedTextFields() {
   const classes = useStyles();
+  const theme = useTheme();
   const [values, setValues] = React.useState({
     name: '',
     email: '',
@@ -164,6 +164,7 @@ export default function OutlinedTextFields() {
             id='text-input-name'
             required={true}
             label='Name'
+            type='text'
             className={clsx(classes.textInput, classes.textField)}
             value={values.name}
             onChange={handleChange('name')}
@@ -182,6 +183,7 @@ export default function OutlinedTextFields() {
             id='text-input-email'
             required={true}
             label='Email'
+            type='email'
             className={clsx(classes.textInput, classes.textField)}
             value={values.email}
             onChange={handleChange('email')}
@@ -203,25 +205,16 @@ export default function OutlinedTextFields() {
             required={true}
             label='Message'
             placeholder='I love your work 😉'
-            className={clsx(
-              classes.textInput,
-              classes.textArea,
-              classes.multiline
-            )}
+            className={clsx(classes.textInput, classes.textArea)}
             value={values.message}
             onChange={handleChange('message')}
             multiline={true}
-            rows={5}
+            rows={useMediaQuery(theme.breakpoints.only('xxs')) ? 10 : 5}
           />
         </FormControl>
       </div>
       <div className={classes.buttonDiv}>
-        <Button
-          variant='contained'
-          type='submit'
-          color='secondary'
-          className={classes.button}
-        >
+        <Button variant='contained' type='submit' className={classes.button}>
           SEND
           <SendIcon className={classes.rightIcon} />
         </Button>

@@ -4,9 +4,9 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 
-import gitHubIcon from '../assets/icons/gh_icon_40px_50op.svg';
-import linkedInIcon from '../assets/icons/li_icon_40px_50op.svg';
-import twitterIcon from '../assets/icons/tw_icon_40px_50op.svg';
+import gitHubIcon from '../assets/icons/gh_icon_40px_theme.palette.c.main.svg';
+import linkedInIcon from '../assets/icons/li_icon_40px_theme.palette.c.main.svg';
+import twitterIcon from '../assets/icons/tw_icon_40px_theme.palette.c.main.svg';
 import ContactForm from './ContactForm';
 
 const useStyles = makeStyles(theme => ({
@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   title: {
-    color: [theme.palette.primary.xdark],
+    color: theme.palette.c.main,
     [theme.breakpoints.down('xl')]: {
       fontSize: '3em',
     },
@@ -54,7 +54,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   contentText: {
-    color: [theme.palette.primary.xdark],
+    color: theme.palette.c.main,
     fontSize: '1.5em',
     padding: '0 15px',
   },
