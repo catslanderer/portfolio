@@ -1,28 +1,28 @@
 import React from 'react';
 import makeStyles from '@material-ui/styles/makeStyles';
 import useTheme from '@material-ui/styles/useTheme';
-import Typography from '@material-ui/core/Typography';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(theme => ({
   breakpointText: {
     color: 'white',
     [theme.breakpoints.only('xl')]: {
-      fontSize: '3em'
+      fontSize: '3em',
     },
     [theme.breakpoints.only('lg')]: {
-      fontSize: '3em'
+      fontSize: '3em',
     },
     [theme.breakpoints.only('md')]: {
-      fontSize: '3em'
+      fontSize: '3em',
     },
     [theme.breakpoints.only('sm')]: {
-      fontSize: '2em'
+      fontSize: '2em',
     },
     [theme.breakpoints.down('xs')]: {
-      fontSize: '1.5em'
-    }
-  }
+      fontSize: '1.5em',
+    },
+  },
 }));
 
 export default function BreakpointDisplay() {
