@@ -193,8 +193,8 @@ export default function OutlinedTextFields() {
           />
         </FormControl>
       </div>
+      <div data-netlify-recaptcha='true' />
       <div className={classes.buttonDiv}>
-        <div data-netlify-recaptcha='true' />
         <Button
           variant='contained'
           color='secondary'
