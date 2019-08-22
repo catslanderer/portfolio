@@ -13,6 +13,20 @@ const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
   },
+  contact: {
+    [theme.breakpoints.down('xl')]: {
+      paddingTop: '64px',
+      marginTop: '-64px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: '56px',
+      marginTop: '-56px',
+    },
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: '48px',
+      marginTop: '-48px',
+    },
+  },
   container: {
     background: [theme.palette.a.main],
     width: '100%',
@@ -55,8 +69,13 @@ const useStyles = makeStyles(theme => ({
   },
   contentText: {
     color: theme.palette.c.main,
-    fontSize: '1.5em',
     padding: '0 15px',
+    [theme.breakpoints.down('xl')]: {
+      fontSize: '1.5em',
+    },
+    [theme.breakpoints.only('xxs')]: {
+      fontSize: '1em',
+    },
   },
 }));
 
@@ -64,7 +83,7 @@ export default function Contact() {
   const classes = useStyles();
 
   return (
-    <div id='contact'>
+    <div id='contact' className={classes.contact}>
       <Box className={classes.container}>
         <div className={classes.headerDiv}>
           <Typography className={classes.title}>Contact</Typography>

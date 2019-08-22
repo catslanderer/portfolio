@@ -24,6 +24,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     width: '100%',
     [theme.breakpoints.down('xs')]: {
+      margin: '10px 0',
       flexDirection: 'column',
     },
   },
@@ -32,21 +33,28 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
   },
   buttonDiv: {
-    padding: '20px 15px 15px 15px',
     width: '100%',
     maxWidth: '800px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-end',
+    [theme.breakpoints.down('xl')]: {
+      padding: '20px 15px 15px 15px',
+    },
+    [theme.breakpoints.down('xs')]: {
+      padding: '10px 15px 15px 15px',
+    },
   },
   textField: {
     flexGrow: 1,
     maxWidth: '400px',
     [theme.breakpoints.down('xs')]: {
+      marginTop: '8px',
       maxWidth: 'none',
     },
   },
   textArea: {
+    padding: '0',
     width: '100%',
     maxWidth: '800px',
   },
