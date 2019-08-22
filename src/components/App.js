@@ -11,7 +11,7 @@ import Contact from './Contact';
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div id='top' className='App'>
+      <div id='aboutMe' className='App'>
         <NavBar />
         <Banner />
         <About />
