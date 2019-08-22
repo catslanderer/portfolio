@@ -1,4 +1,5 @@
 import React from 'react';
+import cc from 'classcat';
 import makeStyles from '@material-ui/styles/makeStyles';
 import useTheme from '@material-ui/styles/useTheme';
 import Box from '@material-ui/core/Box';
@@ -11,9 +12,19 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
   },
   container: {
+    background: theme.palette.a.main,
+  },
+  containerDark: {
+    background: theme.palette.a.dark,
+  },
+  containerPink: {
+    background: theme.palette.b.dark,
+  },
+  contentDiv: {
     display: 'grid',
-    maxWidth: '100%',
-    background: [theme.palette.primary.main],
+    maxWidth: '1200px',
+    margin: '0 auto',
+    background: [theme.palette.a.main],
     [theme.breakpoints.down('xl')]: {
       width: '100%',
       height: '500px',
@@ -43,7 +54,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: '1.1em',
     color: [theme.palette.primary.xdark],
   },
-  content: {
+  gridDiv: {
     display: 'grid',
     justifySelf: 'center',
     alignSelf: 'start',
@@ -153,70 +164,80 @@ export default function Banner() {
 
   return (
     <div id='banner'>
-      <Box className={classes.container}>
-        <div />
-        <div className={classes.content}>
-          <div className={classes.logodiv}>
-            <div className={classes.logo1Div}>
-              <svg
-                className={classes.logo1}
-                viewBox='0 0 113 123'
-                fill='none'
-                xmlns='http://www.w3.org/2000/svg'
-              >
-                <path
-                  d='M57.3654 50.3343L28.6175 0.878143H112.547L84.0424 50.3343H57.3654Z'
-                  fill={theme.palette.b.main}
-                />
-                <path
-                  d='M57.3457 50.2741H0.18927L42.2994 122.965L70.9265 73.4298L57.3457 50.2741Z'
-                  fill={theme.palette.b.main}
-                />
-                <path
-                  d='M84.1633 50.2746L70.8149 73.3948L57.4664 50.2746L84.1633 50.2746Z'
-                  fill={theme.palette.d.main}
-                />
-              </svg>
-            </div>
-            <div className={classes.text}>
-              <Typography className={classes.title}>
-                Christopher J Foster
-              </Typography>
-              <Typography className={classes.subtitle}>
-                SOFTWARE ENGINEER
-              </Typography>
-            </div>
-            <div className={classes.logo2Div}>
-              <svg
-                className={classes.logo2}
-                viewBox='0 0 113 123'
-                fill='none'
-                xmlns='http://www.w3.org/2000/svg'
-              >
-                <path
-                  d='M55.4531 73.2766L84.2009 122.733H0.27174L28.776 73.2766H55.4531Z'
-                  fill={theme.palette.c.main}
-                />
-                <path
-                  d='M55.4727 73.3368H112.629L70.519 0.645485L41.8919 50.1811L55.4727 73.3368Z'
-                  fill={theme.palette.c.main}
-                />
-                <path
-                  d='M28.6551 73.3363L42.0035 50.2161L55.352 73.3363L28.6551 73.3363Z'
-                  fill={theme.palette.d.main}
-                />
-              </svg>
+      <Box
+        className={cc(
+          theme.variables.shadow === 'dark'
+            ? classes.containerDark
+            : theme.variables.shadow === 'pink'
+            ? classes.containerPink
+            : classes.container
+        )}
+      >
+        <div className={classes.contentDiv}>
+          <div />
+          <div className={classes.gridDiv}>
+            <div className={classes.logodiv}>
+              <div className={classes.logo1Div}>
+                <svg
+                  className={classes.logo1}
+                  viewBox='0 0 113 123'
+                  fill='none'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    d='M57.3654 50.3343L28.6175 0.878143H112.547L84.0424 50.3343H57.3654Z'
+                    fill={theme.palette.b.main}
+                  />
+                  <path
+                    d='M57.3457 50.2741H0.18927L42.2994 122.965L70.9265 73.4298L57.3457 50.2741Z'
+                    fill={theme.palette.b.main}
+                  />
+                  <path
+                    d='M84.1633 50.2746L70.8149 73.3948L57.4664 50.2746L84.1633 50.2746Z'
+                    fill={theme.palette.d.main}
+                  />
+                </svg>
+              </div>
+              <div className={classes.text}>
+                <Typography className={classes.title}>
+                  Christopher J Foster
+                </Typography>
+                <Typography className={classes.subtitle}>
+                  SOFTWARE ENGINEER
+                </Typography>
+              </div>
+              <div className={classes.logo2Div}>
+                <svg
+                  className={classes.logo2}
+                  viewBox='0 0 113 123'
+                  fill='none'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    d='M55.4531 73.2766L84.2009 122.733H0.27174L28.776 73.2766H55.4531Z'
+                    fill={theme.palette.c.main}
+                  />
+                  <path
+                    d='M55.4727 73.3368H112.629L70.519 0.645485L41.8919 50.1811L55.4727 73.3368Z'
+                    fill={theme.palette.c.main}
+                  />
+                  <path
+                    d='M28.6551 73.3363L42.0035 50.2161L55.352 73.3363L28.6551 73.3363Z'
+                    fill={theme.palette.d.main}
+                  />
+                </svg>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          className={
-            process.env.REACT_APP_DEV_MODE === 'on'
-              ? classes.breakpointDisplayDEV
-              : classes.breakpointDisplayPROD
-          }
-        >
-          <BreakpointDisplay />
+          <div
+            className={
+              process.env.REACT_APP_DEV_MODE === 'on'
+                ? classes.breakpointDisplayDEV
+                : classes.breakpointDisplayPROD
+            }
+          >
+            <BreakpointDisplay />
+          </div>
         </div>
       </Box>
     </div>

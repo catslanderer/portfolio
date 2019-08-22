@@ -1,4 +1,5 @@
 import React from 'react';
+import cc from 'classcat';
 import makeStyles from '@material-ui/styles/makeStyles';
 import useTheme from '@material-ui/styles/useTheme';
 import PropTypes from 'prop-types';
@@ -9,7 +10,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Link from '@material-ui/core/Link';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import classnames from 'classnames';
 
 import NavDrawer from './NavDrawer';
 
@@ -36,10 +36,20 @@ const useStyles = makeStyles(theme => ({
       padding: '0px 0px 0px 16px',
     },
   },
-  root: {
-    width: '100%',
+  appBar: {
+    background: theme.palette.a.main,
+  },
+  appBarDark: {
+    background: theme.palette.a.dark,
+  },
+  appBarPink: {
+    background: theme.palette.b.dark,
   },
   container: {
+    background: theme.palette.a.main,
+    width: '100%',
+    maxWidth: '1200px',
+    margin: '0 auto',
     display: 'grid',
     [theme.breakpoints.down('xl')]: {
       gridTemplateColumns: '40% 60%',
@@ -52,12 +62,6 @@ const useStyles = makeStyles(theme => ({
     transition: 'opacity 0.9s',
     display: 'flex',
     [theme.breakpoints.down('xl')]: {
-      height: '45px',
-    },
-    [theme.breakpoints.down('lg')]: {
-      height: '45px',
-    },
-    [theme.breakpoints.down('md')]: {
       height: '45px',
     },
     [theme.breakpoints.down('sm')]: {
@@ -116,7 +120,7 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center',
     justifyContent: 'center',
     fontWeight: '400',
-    color: [theme.palette.primary.xdark],
+    color: [theme.palette.a.xdark],
     [theme.breakpoints.down('xl')]: {
       fontSize: '1.55em',
     },
@@ -143,7 +147,7 @@ const useStyles = makeStyles(theme => ({
     margin: '0px 10px',
     fontWeight: '300',
     fontSize: '1.1em',
-    color: [theme.palette.primary.xdark],
+    color: [theme.palette.c.main],
   },
 }));
 
@@ -180,19 +184,27 @@ export default function ElevateAppBar(props) {
     <React.Fragment>
       <CssBaseline />
       <ElevationScroll {...props}>
-        <AppBar>
+        <AppBar
+          className={cc(
+            theme.variables.shadow === 'dark'
+              ? classes.appBarDark
+              : theme.variables.shadow === 'pink'
+              ? classes.appBarPink
+              : classes.appBar
+          )}
+        >
           <Toolbar
             classes={{ regular: classes.regular, gutters: classes.gutters }}
             className={classes.container}
           >
             <div>
               <div
-                className={classnames(
+                className={cc([
                   classes.logoDiv,
                   TitleScroll()
                     ? classes.logoDivVisible
-                    : classes.logoDivInvisible
-                )}
+                    : classes.logoDivInvisible,
+                ])}
               >
                 <div className={classes.logo1Div}>
                   <svg

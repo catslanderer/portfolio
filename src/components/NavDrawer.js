@@ -15,6 +15,7 @@ import MailIcon from '@material-ui/icons/Mail';
 
 const useStyles = makeStyles(theme => ({
   menuIcon: {
+    color: theme.palette.c.main,
     [theme.breakpoints.only('sm')]: {
       width: '32px',
       height: '32px',
@@ -28,7 +29,7 @@ const useStyles = makeStyles(theme => ({
   },
   drawerContent: {
     fontWeight: '300',
-    color: [theme.palette.a.dark],
+    color: theme.palette.c.main,
   },
 }));
 
@@ -96,11 +97,7 @@ export default function NavDrawer() {
 
   return (
     <div>
-      <IconButton
-        styles={{ color: 'primary.xdark' }}
-        aria-label='open drawer'
-        onClick={toggleDrawer('top', true)}
-      >
+      <IconButton aria-label='open drawer' onClick={toggleDrawer('top', true)}>
         <MenuIcon className={classes.menuIcon} />
       </IconButton>
       <Drawer

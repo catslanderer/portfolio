@@ -1,5 +1,5 @@
 import React from 'react';
-import clsx from 'clsx';
+import cc from 'classcat';
 import { fade, withStyles, makeStyles } from '@material-ui/core/styles';
 import useTheme from '@material-ui/styles/useTheme';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
@@ -34,7 +34,6 @@ const useStyles = makeStyles(theme => ({
   },
   buttonDiv: {
     width: '100%',
-    maxWidth: '800px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-end',
@@ -47,7 +46,6 @@ const useStyles = makeStyles(theme => ({
   },
   textField: {
     flexGrow: 1,
-    maxWidth: '400px',
     [theme.breakpoints.down('xs')]: {
       marginTop: '8px',
       maxWidth: 'none',
@@ -56,7 +54,6 @@ const useStyles = makeStyles(theme => ({
   textArea: {
     padding: '0',
     width: '100%',
-    maxWidth: '800px',
   },
   formControl: {
     flexGrow: 1,
@@ -159,12 +156,12 @@ export default function OutlinedTextFields() {
     >
       <input type='hidden' name='form-name' value='portfolio contact' />
       <div className={classes.textFieldDiv}>
-        <FormControl className={clsx(classes.formControl, classes.textField)}>
+        <FormControl className={cc([classes.formControl, classes.textField])}>
           <InputLabel
             required={true}
             shrink
             htmlFor='text-input-name'
-            className={clsx(classes.inputLabel, classes.shrink)}
+            className={cc([classes.inputLabel, classes.shrink])}
           >
             Name
           </InputLabel>
@@ -173,17 +170,17 @@ export default function OutlinedTextFields() {
             required={true}
             label='Name'
             type='text'
-            className={clsx(classes.textInput, classes.textField)}
+            className={cc([classes.textInput, classes.textField])}
             value={values.name}
             onChange={handleChange('name')}
           />
         </FormControl>
-        <FormControl className={clsx(classes.formControl, classes.textField)}>
+        <FormControl className={cc([classes.formControl, classes.textField])}>
           <InputLabel
             required={true}
             shrink
             htmlFor='text-input-email'
-            className={clsx(classes.inputLabel, classes.shrink)}
+            className={cc([classes.inputLabel, classes.shrink])}
           >
             Email
           </InputLabel>
@@ -192,19 +189,19 @@ export default function OutlinedTextFields() {
             required={true}
             label='Email'
             type='email'
-            className={clsx(classes.textInput, classes.textField)}
+            className={cc([classes.textInput, classes.textField])}
             value={values.email}
             onChange={handleChange('email')}
           />
         </FormControl>
       </div>
       <div className={classes.textAreaDiv}>
-        <FormControl className={clsx(classes.formControl, classes.textArea)}>
+        <FormControl className={cc([classes.formControl, classes.textArea])}>
           <InputLabel
             required={true}
             shrink
             htmlFor='text-input-message'
-            className={clsx(classes.inputLabel, classes.shrink)}
+            className={cc([classes.inputLabel, classes.shrink])}
           >
             Message
           </InputLabel>
@@ -213,7 +210,7 @@ export default function OutlinedTextFields() {
             required={true}
             label='Message'
             placeholder='I love your work 😉'
-            className={clsx(classes.textInput, classes.textArea)}
+            className={cc([classes.textInput, classes.textArea])}
             value={values.message}
             onChange={handleChange('message')}
             multiline={true}

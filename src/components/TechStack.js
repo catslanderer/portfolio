@@ -1,4 +1,5 @@
 import React from 'react';
+import cc from 'classcat';
 import makeStyles from '@material-ui/styles/makeStyles';
 import useTheme from '@material-ui/styles/useTheme';
 import Box from '@material-ui/core/Box';
@@ -25,8 +26,19 @@ const useStyles = makeStyles(theme => ({
     },
   },
   container: {
+    background: theme.palette.b.main,
+  },
+  containerDark: {
+    background: theme.palette.b.dark,
+  },
+  containerPink: {
+    background: theme.palette.b.dark,
+  },
+  contentDiv: {
     background: [theme.palette.b.main],
     width: '100%',
+    maxWidth: '1200px',
+    margin: '0 auto',
     padding: '20px 30px 30px 30px',
   },
   headerDiv: {
@@ -89,56 +101,66 @@ export default function Contact() {
 
   return (
     <div id='techStack' className={classes.techStack}>
-      <Box className={classes.container}>
-        <div className={classes.headerDiv}>
-          <Typography className={classes.title}>Tech Stack</Typography>
-        </div>
-        <Typography className={classes.contentText}>
-          I'm familiar with the following languages, frameworks, libraries, and
-          technologies.
-        </Typography>
-        <div className={classes.root}>
-          <div className={classes.gridDiv}>
-            <Grid className={classes.gridContainer} container spacing={3}>
-              {[
-                theme.logoProps.css3,
-                theme.logoProps.express,
-                theme.logoProps.github,
-                theme.logoProps.html5,
-                theme.logoProps.illustrator,
-                theme.logoProps.javascript,
-                theme.logoProps.jest,
-                theme.logoProps.jss,
-                theme.logoProps.less,
-                theme.logoProps.materialui,
-                theme.logoProps.nodejs,
-                theme.logoProps.postgresql,
-                theme.logoProps.python,
-                theme.logoProps.react,
-                theme.logoProps.redux,
-                theme.logoProps.sass,
-                theme.logoProps.svg,
-                theme.logoProps.xd,
-              ].map(item => (
-                <Grid
-                  className={classes.gridItem}
-                  item
-                  xs={'auto'}
-                  component='a'
-                  href={item.link}
-                  key={item.text}
-                >
-                  <Card className={classes.card}>
-                    <img
-                      className={classes.logo}
-                      src={item.img}
-                      alt={item.alt}
-                    />
-                    {item.text}
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
+      <Box
+        className={cc(
+          theme.variables.shadow === 'dark'
+            ? classes.containerDark
+            : theme.variables.shadow === 'pink'
+            ? classes.containerPink
+            : classes.container
+        )}
+      >
+        <div className={classes.contentDiv}>
+          <div className={classes.headerDiv}>
+            <Typography className={classes.title}>Tech Stack</Typography>
+          </div>
+          <Typography className={classes.contentText}>
+            I'm familiar with the following languages, frameworks, libraries,
+            and technologies.
+          </Typography>
+          <div className={classes.root}>
+            <div className={classes.gridDiv}>
+              <Grid className={classes.gridContainer} container spacing={3}>
+                {[
+                  theme.logoProps.css3,
+                  theme.logoProps.express,
+                  theme.logoProps.github,
+                  theme.logoProps.html5,
+                  theme.logoProps.illustrator,
+                  theme.logoProps.javascript,
+                  theme.logoProps.jest,
+                  theme.logoProps.jss,
+                  theme.logoProps.less,
+                  theme.logoProps.materialui,
+                  theme.logoProps.nodejs,
+                  theme.logoProps.postgresql,
+                  theme.logoProps.python,
+                  theme.logoProps.react,
+                  theme.logoProps.redux,
+                  theme.logoProps.sass,
+                  theme.logoProps.svg,
+                  theme.logoProps.xd,
+                ].map(item => (
+                  <Grid
+                    className={classes.gridItem}
+                    item
+                    xs={'auto'}
+                    component='a'
+                    href={item.link}
+                    key={item.text}
+                  >
+                    <Card className={classes.card}>
+                      <img
+                        className={classes.logo}
+                        src={item.img}
+                        alt={item.alt}
+                      />
+                      {item.text}
+                    </Card>
+                  </Grid>
+                ))}
+              </Grid>
+            </div>
           </div>
         </div>
       </Box>

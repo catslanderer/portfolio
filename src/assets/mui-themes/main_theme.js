@@ -20,7 +20,9 @@ import svg_logo from '../logos/svg_logo.svg';
 import xd_logo from '../logos/xd_logo.svg';
 
 export default createMuiTheme({
-  variables: {},
+  variables: {
+    shadow: 'none', // values: 'none', 'dark', 'pink'
+  },
   navLinks: {
     aboutMe: '#aboutMe',
     projects: '#projects',
