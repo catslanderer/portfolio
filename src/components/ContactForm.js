@@ -64,7 +64,6 @@ const useStyles = makeStyles(theme => ({
     borderTopLeftRadius: '4px !important',
     borderTopRightRadius: '4px !important',
   },
-  recaptcha: {},
   button: {
     background: theme.palette.d.main,
     color: theme.palette.c.main,
@@ -72,8 +71,7 @@ const useStyles = makeStyles(theme => ({
       background: theme.palette.d.light,
       color: theme.palette.c.main,
     },
-    width: '301px',
-    margin: '20px 2px 0 0',
+    width: 'calc(50% - 15px)',
     [theme.breakpoints.down('xs')]: {
       width: '100%',
     },
@@ -122,8 +120,6 @@ export default function OutlinedTextFields() {
       .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
       .join('&');
   };
-
-  // grecaptcha.getResponse();
 
   const handleSubmit = e => {
     fetch('/', {
@@ -221,11 +217,6 @@ export default function OutlinedTextFields() {
         </FormControl>
       </div>
       <div className={classes.buttonDiv}>
-        <div
-          data-size='compact'
-          className={clsx('g-recaptcha', classes.recaptcha)}
-          data-sitekey='6LfhQ7QUAAAAAKctBvQCiZqHe09iiyrd2a-NGEWv'
-        />
         <Button
           variant='contained'
           type='submit'
