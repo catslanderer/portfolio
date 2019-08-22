@@ -145,7 +145,6 @@ export default function OutlinedTextFields() {
     <form
       name='portfolio contact'
       className={classes.container}
-      noValidate
       autoComplete='off'
       data-netlify='true'
       onSubmit={handleSubmit}
