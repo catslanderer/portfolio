@@ -17,99 +17,99 @@ const useStyles = makeStyles(theme => ({
   regular: {
     [theme.breakpoints.down('xl')]: {
       minHeight: '64px',
-      maxHeight: '64px'
+      maxHeight: '64px',
     },
     [theme.breakpoints.down('sm')]: {
       minHeight: '56px',
-      maxHeight: '56px'
+      maxHeight: '56px',
     },
     [theme.breakpoints.down('xs')]: {
       minHeight: '48px',
-      maxHeight: '48px'
-    }
+      maxHeight: '48px',
+    },
   },
   gutters: {
     [theme.breakpoints.down('xl')]: {
-      padding: '0px 16px'
+      padding: '0px 16px',
     },
     [theme.breakpoints.down('sm')]: {
-      padding: '0px 0px 0px 16px'
-    }
+      padding: '0px 0px 0px 16px',
+    },
   },
   root: {
-    width: '100%'
+    width: '100%',
   },
   container: {
     display: 'grid',
     [theme.breakpoints.down('xl')]: {
-      gridTemplateColumns: '40% 60%'
+      gridTemplateColumns: '40% 60%',
     },
     [theme.breakpoints.down('sm')]: {
-      gridTemplateColumns: '75% 25%'
-    }
+      gridTemplateColumns: '75% 25%',
+    },
   },
   logoDiv: {
     transition: 'opacity 0.9s',
     display: 'flex',
     [theme.breakpoints.down('xl')]: {
-      height: '45px'
+      height: '45px',
     },
     [theme.breakpoints.down('lg')]: {
-      height: '45px'
+      height: '45px',
     },
     [theme.breakpoints.down('md')]: {
-      height: '45px'
+      height: '45px',
     },
     [theme.breakpoints.down('sm')]: {
-      height: '39px'
+      height: '39px',
     },
     [theme.breakpoints.down('xs')]: {
       height: '31px',
-      padding: '0'
-    }
+      padding: '0',
+    },
   },
   logoDivVisible: {
-    opacity: 1
+    opacity: 1,
   },
   logoDivInvisible: {
-    opacity: 0
+    opacity: 0,
   },
   logo1Div: {
     display: 'flex',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
   },
   logo1: {
     display: 'flex',
     height: 'auto',
     [theme.breakpoints.down('xl')]: {
-      width: '30px'
+      width: '30px',
     },
     [theme.breakpoints.down('sm')]: {
-      width: '25px'
+      width: '25px',
     },
     [theme.breakpoints.down('xs')]: {
-      width: '20px'
-    }
+      width: '20px',
+    },
   },
   logo2Div: {
     display: 'flex',
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
   },
   logo2: {
     height: 'auto',
     [theme.breakpoints.down('xl')]: {
-      width: '30px'
+      width: '30px',
     },
     [theme.breakpoints.down('sm')]: {
-      width: '25px'
+      width: '25px',
     },
     [theme.breakpoints.down('xs')]: {
-      width: '20px'
-    }
+      width: '20px',
+    },
   },
   titleDiv: {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   title: {
     display: 'flex',
@@ -118,43 +118,43 @@ const useStyles = makeStyles(theme => ({
     fontWeight: '400',
     color: [theme.palette.primary.xdark],
     [theme.breakpoints.down('xl')]: {
-      fontSize: '1.55em'
+      fontSize: '1.55em',
     },
     [theme.breakpoints.only('sm')]: {
       paddingTop: '2px',
-      fontSize: '1.4em'
+      fontSize: '1.4em',
     },
     [theme.breakpoints.down('xs')]: {
       paddingBottom: '2px',
-      fontSize: '1.1em'
-    }
+      fontSize: '1.1em',
+    },
   },
   linksdiv: {
     justifySelf: 'end',
     alignItems: 'flex-start',
     [theme.breakpoints.down('xl')]: {
-      paddingTop: '3px'
+      paddingTop: '3px',
     },
     [theme.breakpoints.down('sm')]: {
-      padding: '0px'
-    }
+      padding: '0px',
+    },
   },
   link: {
     margin: '0px 10px',
     fontWeight: '300',
     fontSize: '1.1em',
-    color: [theme.palette.primary.xdark]
-  }
+    color: [theme.palette.primary.xdark],
+  },
 }));
 
 function ElevationScroll({ children }) {
   const triggerElevation = useScrollTrigger({
     disableHysteresis: true,
-    threshold: 0
+    threshold: 0,
   });
 
   return React.cloneElement(children, {
-    elevation: triggerElevation ? 4 : 0
+    elevation: triggerElevation ? 4 : 0,
   });
 }
 
@@ -164,13 +164,13 @@ function TitleScroll() {
   const sm = useMediaQuery(theme.breakpoints.only('sm'));
   const triggerTitle = useScrollTrigger({
     disableHysteresis: true,
-    threshold: xs ? 145 : sm ? 215 : 310
+    threshold: xs ? 145 : sm ? 215 : 310,
   });
   return triggerTitle;
 }
 
 ElevationScroll.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default function ElevateAppBar(props) {
@@ -250,8 +250,8 @@ export default function ElevateAppBar(props) {
             <div className={classes.linksdiv}>
               {useMediaQuery(theme.breakpoints.up('md')) && (
                 <Typography>
-                  <Link href={theme.navLinks.top} className={classes.link}>
-                    TOP / ABOUT ME
+                  <Link href={theme.navLinks.aboutMe} className={classes.link}>
+                    ABOUT ME
                   </Link>
                   <Link href={theme.navLinks.projects} className={classes.link}>
                     PROJECTS

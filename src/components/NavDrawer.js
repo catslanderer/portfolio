@@ -17,26 +17,26 @@ const useStyles = makeStyles(theme => ({
   menuIcon: {
     [theme.breakpoints.only('sm')]: {
       width: '32px',
-      height: '32px'
-    }
+      height: '32px',
+    },
   },
   list: {
-    width: 250
+    width: 250,
   },
   fullList: {
-    width: 'auto'
+    width: 'auto',
   },
   drawerContent: {
     fontWeight: '300',
-    color: [theme.palette.a.dark]
-  }
+    color: [theme.palette.a.dark],
+  },
 }));
 
 export default function NavDrawer() {
   const classes = useStyles();
   const theme = useTheme();
   const [state, setState] = React.useState({
-    top: false
+    top: false,
   });
 
   const toggleDrawer = (side, open) => event => {
@@ -59,20 +59,20 @@ export default function NavDrawer() {
     >
       <List>
         {[
-          { text: 'TOP / ABOUT ME', link: [theme.navLinks.top] },
+          { text: 'ABOUT ME', link: [theme.navLinks.aboutMe] },
           {
             text: 'PROJECTS',
-            link: [theme.navLinks.project]
+            link: [theme.navLinks.project],
           },
           {
             text: 'TECH STACK',
-            link: [theme.navLinks.techStack]
+            link: [theme.navLinks.techStack],
           },
-          { text: 'CONTACT', link: [theme.navLinks.contact] }
+          { text: 'CONTACT', link: [theme.navLinks.contact] },
         ].map(item => (
           <ListItem button component='a' href={item.link} key={item.text}>
             <ListItemIcon className={classes.drawerContent}>
-              {item.text === 'TOP / ABOUT ME' ? (
+              {item.text === 'ABOUT ME' ? (
                 <ArrowUpward className={classes.drawerContent} />
               ) : item.text === 'PROJECTS' ? (
                 <PhotoLibrary className={classes.drawerContent} />

@@ -22,7 +22,7 @@ import xd_logo from '../logos/xd_logo.svg';
 export default createMuiTheme({
   variables: {},
   navLinks: {
-    top: '#top',
+    aboutMe: '#aboutMe',
     projects: '#projects',
     techStack: '#techStack',
     contact: '#contact',
