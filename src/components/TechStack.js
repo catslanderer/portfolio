@@ -103,7 +103,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Contact() {
+export default function TechStack() {
   const classes = useStyles();
   const theme = useTheme();
 

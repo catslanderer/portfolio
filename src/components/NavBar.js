@@ -177,7 +177,7 @@ ElevationScroll.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default function ElevateAppBar(props) {
+export default function NavBar(props) {
   const classes = useStyles();
   const theme = useTheme();
   return (

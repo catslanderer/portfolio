@@ -115,7 +115,7 @@ const TextInput = withStyles(theme => ({
   },
 }))(InputBase);
 
-export default function OutlinedTextFields() {
+export default function ContactForm() {
   const classes = useStyles();
   const theme = useTheme();
   const [values, setValues] = React.useState({

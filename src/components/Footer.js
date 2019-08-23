@@ -53,7 +53,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Contact() {
+export default function Footer() {
   const classes = useStyles();
   const theme = useTheme();
 
