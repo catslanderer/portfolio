@@ -134,14 +134,16 @@ export default function Project1() {
         <div className={classes.contentDiv}>
           <div className={classes.textDiv}>
             <Typography className={classes.contentText}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-              magnam voluptate ipsam animi optio est natus ad. Perferendis
-              officia, doloribus optio, voluptatibus facere necessitatibus id
-              blanditiis iusto repudiandae temporibus eligendi. Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Cumque quod, at,
-              nostrum, distinctio beatae tenetur expedita omnis id maxime
-              eveniet animi? Quo vitae voluptatem eveniet quidem possimus minus,
-              pariatur in!
+              At Lambda School, where I studied software engineering and
+              computer science, students were given an exam during which we were
+              to write an algorithm that could traverse an undirected cyclic
+              graph in as few steps as we could manage. My algorithm produced a
+              traversal that beat the prior school record by over 30 steps. Its
+              key feature is that it identifies dead ends in one pass and then
+              methodically explores them in the next pass, thus minimizing
+              backtracking. The algorithm is heavily commented to explain how it
+              works, and also includes my thoughts about how it could be further
+              improved.
             </Typography>
           </div>
           <div className={classes.imageLinkDiv}>
