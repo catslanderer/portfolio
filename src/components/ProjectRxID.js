@@ -92,6 +92,7 @@ const useStyles = makeStyles(theme => ({
   img: {
     border: '3px solid',
     borderColor: theme.palette.a.main,
+    borderRadius: '3px',
     width: '100%',
   },
   linksDiv: {
@@ -133,17 +134,14 @@ export default function Project1() {
         <div className={classes.contentDiv}>
           <div className={classes.textDiv}>
             <Typography className={classes.contentText}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-              nihil placeat dolores enim similique nesciunt aspernatur quia
-              accusantium in? Iste esse rem atque amet sequi aspernatur
-              inventore provident velit quam! Lorem ipsum dolor sit, amet
-              consectetur adipisicing elit. Corporis adipisci cum dolor
-              reprehenderit veritatis autem eum officiis laborum ad ab, sapiente
-              consequuntur eius temporibus voluptate saepe explicabo impedit
-              nihil ullam. Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Eaque voluptate at ducimus corrupti accusantium tempora esse
-              illo praesentium doloribus provident. Sapiente id odit quaerat?
-              Illum repellat autem earum aut vitae?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+              magnam voluptate ipsam animi optio est natus ad. Perferendis
+              officia, doloribus optio, voluptatibus facere necessitatibus id
+              blanditiis iusto repudiandae temporibus eligendi. Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Cumque quod, at,
+              nostrum, distinctio beatae tenetur expedita omnis id maxime
+              eveniet animi? Quo vitae voluptatem eveniet quidem possimus minus,
+              pariatur in!
             </Typography>
           </div>
           <div className={classes.imageLinkDiv}>

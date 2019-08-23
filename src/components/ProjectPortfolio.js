@@ -1,4 +1,5 @@
 import React from 'react';
+import cc from 'classcat';
 import makeStyles from '@material-ui/styles/makeStyles';
 import useTheme from '@material-ui/styles/useTheme';
 import Box from '@material-ui/core/Box';
@@ -6,7 +7,7 @@ import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 
-import rxid_screenshot from '../assets/images/rxid_screenshot.png';
+import portfolio_screenshot from '../assets/images/portfolio_screenshot.png';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -92,6 +93,7 @@ const useStyles = makeStyles(theme => ({
   img: {
     border: '3px solid',
     borderColor: theme.palette.a.main,
+    borderRadius: '3px',
     width: '100%',
   },
   linksDiv: {
@@ -102,6 +104,25 @@ const useStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.down('sm')]: {
       padding: '10px 10px 10px 0',
+    },
+  },
+  strikethroughLinkDiv: {
+    display: 'flex',
+  },
+  strikethroughLink: {
+    textDecoration: 'line-through',
+  },
+  strikethroughLinkText: {
+    color: theme.palette.a.dark,
+    paddingTop: '5px',
+    [theme.breakpoints.down('xl')]: {
+      fontSize: '1.5em',
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1.2em',
+    },
+    [theme.breakpoints.only('xxs')]: {
+      fontSize: '0.9em',
     },
   },
   link: {
@@ -133,43 +154,38 @@ export default function Project1() {
         <div className={classes.contentDiv}>
           <div className={classes.textDiv}>
             <Typography className={classes.contentText}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-              nihil placeat dolores enim similique nesciunt aspernatur quia
-              accusantium in? Iste esse rem atque amet sequi aspernatur
-              inventore provident velit quam! Lorem ipsum dolor sit, amet
-              consectetur adipisicing elit. Corporis adipisci cum dolor
-              reprehenderit veritatis autem eum officiis laborum ad ab, sapiente
-              consequuntur eius temporibus voluptate saepe explicabo impedit
-              nihil ullam. Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Eaque voluptate at ducimus corrupti accusantium tempora esse
-              illo praesentium doloribus provident. Sapiente id odit quaerat?
-              Illum repellat autem earum aut vitae?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+              magnam voluptate ipsam animi optio est natus ad. Perferendis
+              officia, doloribus optio, voluptatibus facere necessitatibus id
+              blanditiis iusto repudiandae temporibus eligendi. Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Cumque quod, at,
+              nostrum, distinctio beatae tenetur expedita omnis id maxime
+              eveniet animi? Quo vitae voluptatem eveniet quidem possimus minus,
+              pariatur in!
             </Typography>
           </div>
           <div className={classes.imageLinkDiv}>
             <img
-              src={rxid_screenshot}
-              alt='rxid screenshot'
+              src={portfolio_screenshot}
+              alt='portfolio screenshot'
               className={classes.img}
             />
             <div className={classes.linksDiv}>
+              <div className={classes.strikethroughLinkDiv}>
+                <Typography
+                  className={cc([classes.link, classes.strikethroughLink])}
+                >
+                  Deployed Site
+                </Typography>
+                <Typography className={classes.strikethroughLinkText}>
+                  &nbsp;You're on it!
+                </Typography>
+              </div>
               <Link
-                href={theme.projectLinks.rxidDeploy}
+                href={theme.projectLinks.portfolioRepo}
                 className={classes.link}
               >
-                Deployed Site
-              </Link>
-              <Link
-                href={theme.projectLinks.rxidFrontEnd}
-                className={classes.link}
-              >
-                Front End Repo (my commits)
-              </Link>
-              <Link
-                href={theme.projectLinks.rxidBackEnd}
-                className={classes.link}
-              >
-                Back End Repo (my commits)
+                Repo
               </Link>
             </div>
           </div>
