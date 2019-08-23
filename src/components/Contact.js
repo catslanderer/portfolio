@@ -83,16 +83,18 @@ const useStyles = makeStyles(theme => ({
   },
   contentText: {
     color: theme.palette.c.main,
-    padding: '30px 15px',
     [theme.breakpoints.down('xl')]: {
+      padding: '30px 15px',
       textAlign: 'center',
       fontSize: '1.5em',
     },
     [theme.breakpoints.down('md')]: {
+      padding: '20px 15px',
       textAlign: 'left',
       fontSize: '1.5em',
     },
     [theme.breakpoints.only('xxs')]: {
+      padding: '10px 15px',
       fontSize: '1em',
     },
   },
