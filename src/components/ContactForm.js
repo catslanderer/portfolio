@@ -9,6 +9,8 @@ import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import SendIcon from '@material-ui/icons/Send';
 
+import SuccessSnackBar from './SuccessSnackBar';
+
 const useStyles = makeStyles(theme => ({
   root: {
     background: 'white',
@@ -121,6 +123,18 @@ export default function OutlinedTextFields() {
     email: '',
     message: '',
   });
+  const [open, setOpen] = React.useState(false);
+
+  const openSnackBar = () => {
+    setOpen(true);
+  };
+
+  const closeSnackBar = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
+  };
 
   const encode = data => {
     return Object.keys(data)
@@ -140,7 +154,7 @@ export default function OutlinedTextFields() {
       }),
     })
       .then(() => setValues({ name: '', email: '', message: '' }))
-      .then(() => console.log('snackbar'))
+      .then(() => openSnackBar())
       .catch(error => alert(error));
     e.preventDefault();
   };
@@ -227,6 +241,7 @@ export default function OutlinedTextFields() {
           <SendIcon className={classes.rightIcon} />
         </Button>
       </div>
+      <SuccessSnackBar open={open} closeSnackBar={closeSnackBar} />
     </form>
   );
 }
