@@ -60,6 +60,7 @@ const useStyles = makeStyles(theme => ({
   contentText: {
     color: theme.palette.c.main,
     fontSize: '1.5em',
+    paddingBottom: '20px',
   },
   card: {
     display: 'flex',
@@ -76,7 +77,7 @@ const useStyles = makeStyles(theme => ({
   gridContainer: {
     display: 'flex',
     justifyContent: 'center',
-    padding: '20px 0 10px 0',
+    padding: '10px 0',
   },
   gridItem: {
     minHeight: '180px',
