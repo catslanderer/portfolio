@@ -4,7 +4,7 @@ import ThemeProvider from '@material-ui/styles/ThemeProvider';
 import theme from '../assets/mui-themes/main_theme';
 import NavBar from './NavBar';
 import Banner from './Banner';
-import About from './About';
+import AboutMe from './AboutMe';
 import TechStack from './TechStack';
 import Contact from './Contact';
 import Footer from './Footer';
@@ -15,7 +15,7 @@ function App() {
       <div id='aboutMe' className='App'>
         <NavBar />
         <Banner />
-        <About />
+        <AboutMe />
         <TechStack />
         <Contact />
         <Footer />

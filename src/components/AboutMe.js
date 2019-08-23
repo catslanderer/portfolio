@@ -3,6 +3,7 @@ import cc from 'classcat';
 import makeStyles from '@material-ui/styles/makeStyles';
 import useTheme from '@material-ui/styles/useTheme';
 import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -22,6 +23,21 @@ const useStyles = makeStyles(theme => ({
     height: '1000px',
     maxWidth: '1200px',
     margin: '0 auto',
+    padding: '20px 30px 30px 30px',
+  },
+  title: {
+    color: [theme.palette.c.main],
+    [theme.breakpoints.down('xl')]: {
+      fontSize: '3em',
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '2.5em',
+    },
+  },
+  contentText: {
+    color: theme.palette.c.main,
+    fontSize: '1.5em',
+    paddingBottom: '20px',
   },
 }));
 
@@ -39,7 +55,12 @@ export default function About() {
           : classes.container
       )}
     >
-      <div className={classes.contentDiv}>About Me!</div>
+      <div className={classes.contentDiv}>
+        <div className={classes.headerDiv}>
+          <Typography className={classes.title}>About Me</Typography>
+        </div>
+        <Typography className={classes.contentText} />
+      </div>
     </Box>
   );
 }
