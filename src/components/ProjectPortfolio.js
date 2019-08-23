@@ -154,14 +154,12 @@ export default function Project1() {
         <div className={classes.contentDiv}>
           <div className={classes.textDiv}>
             <Typography className={classes.contentText}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-              magnam voluptate ipsam animi optio est natus ad. Perferendis
-              officia, doloribus optio, voluptatibus facere necessitatibus id
-              blanditiis iusto repudiandae temporibus eligendi. Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Cumque quod, at,
-              nostrum, distinctio beatae tenetur expedita omnis id maxime
-              eveniet animi? Quo vitae voluptatem eveniet quidem possimus minus,
-              pariatur in!
+              I've used this project to further explore the Material-UI library,
+              and to learn in detail what it takes make a site look good on as
+              many devices as possible. Try it on a mobile device. Turn the
+              device sideways. Check out the repo to see the kind of
+              highly-organized, clearly-labeled, reusable code that I like to
+              write.
             </Typography>
           </div>
           <div className={classes.imageLinkDiv}>
