@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
   },
   contentDiv: {
     background: theme.palette.b.main,
-    height: '1000px',
+    height: '500px',
     maxWidth: '1200px',
     margin: '0 auto',
     padding: '20px 30px 30px 30px',
@@ -41,7 +41,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function About() {
+export default function AboutMe() {
   const classes = useStyles();
   const theme = useTheme();
 
