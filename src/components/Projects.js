@@ -12,17 +12,19 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
   },
   container: {
-    background: theme.palette.a.main,
+    background: theme.palette.b.main,
   },
   containerDark: {
-    background: theme.palette.a.dark,
+    background: theme.palette.b.dark,
   },
   containerPink: {
     background: theme.palette.b.dark,
   },
+  headerDiv: {
+    paddingBottom: '20px',
+  },
   contentDiv: {
-    background: theme.palette.a.main,
-    height: '1000px',
+    background: theme.palette.b.main,
     maxWidth: '1200px',
     margin: '0 auto',
     padding: '20px 30px 30px 30px',
@@ -30,10 +32,16 @@ const useStyles = makeStyles(theme => ({
   title: {
     color: [theme.palette.c.main],
     [theme.breakpoints.down('xl')]: {
-      fontSize: '3em',
+      fontSize: theme.fontSize.title.xlDown,
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: theme.fontSize.title.smDown,
     },
     [theme.breakpoints.down('xs')]: {
-      fontSize: '2.5em',
+      fontSize: theme.fontSize.title.xsDown,
+    },
+    [theme.breakpoints.only('xxs')]: {
+      fontSize: theme.fontSize.title.xxsOnly,
     },
   },
   contentText: {
