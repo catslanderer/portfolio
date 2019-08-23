@@ -49,7 +49,7 @@ const useStyles = makeStyles(theme => ({
       flexDirection: 'row',
     },
     [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column-reverse',
+      flexDirection: 'column',
     },
   },
   textDiv: {
@@ -57,7 +57,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     [theme.breakpoints.down('xl')]: {
       width: '50%',
-      paddingRight: '30px',
+      paddingLeft: '30px',
     },
     [theme.breakpoints.down('sm')]: {
       width: '100%',
@@ -152,16 +152,6 @@ export default function Project1() {
           <Typography className={classes.title}>Portfolio</Typography>
         </div>
         <div className={classes.contentDiv}>
-          <div className={classes.textDiv}>
-            <Typography className={classes.contentText}>
-              I've used this project to further explore the Material-UI library,
-              and to learn in detail what it takes make a site look good on as
-              many devices as possible. Try it on a mobile device. Turn the
-              device sideways. Check out the repo to see the kind of
-              highly-organized, clearly-labeled, reusable code that I like to
-              write.
-            </Typography>
-          </div>
           <div className={classes.imageLinkDiv}>
             <img
               src={portfolio_screenshot}
@@ -186,6 +176,16 @@ export default function Project1() {
                 Repo
               </Link>
             </div>
+          </div>
+          <div className={classes.textDiv}>
+            <Typography className={classes.contentText}>
+              I've used this project to further explore the Material-UI library,
+              and to learn in detail what it takes make a site look good on as
+              many devices as possible. Try it on a mobile device. Turn the
+              device sideways. Check out the repo to see the kind of
+              highly-organized, clearly-labeled, reusable code that I like to
+              write.
+            </Typography>
           </div>
         </div>
       </Card>

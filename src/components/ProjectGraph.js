@@ -48,7 +48,7 @@ const useStyles = makeStyles(theme => ({
       flexDirection: 'row',
     },
     [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column-reverse',
+      flexDirection: 'column',
     },
   },
   textDiv: {
@@ -56,7 +56,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     [theme.breakpoints.down('xl')]: {
       width: '50%',
-      paddingRight: '30px',
+      paddingLeft: '30px',
     },
     [theme.breakpoints.down('sm')]: {
       width: '100%',
@@ -132,20 +132,6 @@ export default function Project1() {
           <Typography className={classes.title}>Graph Traversal</Typography>
         </div>
         <div className={classes.contentDiv}>
-          <div className={classes.textDiv}>
-            <Typography className={classes.contentText}>
-              At Lambda School, where I studied software engineering and
-              computer science, students were given an exam during which we were
-              to write an algorithm that could traverse an undirected cyclic
-              graph in as few steps as we could manage. My algorithm produced a
-              traversal that beat the prior school record by over 30 steps. Its
-              key feature is that it identifies dead ends in one pass and then
-              methodically explores them in the next pass, thus minimizing
-              backtracking. The algorithm is heavily commented to explain how it
-              works, and also includes my thoughts about how it could be further
-              improved.
-            </Typography>
-          </div>
           <div className={classes.imageLinkDiv}>
             <img
               src={graph_screenshot}
@@ -166,6 +152,20 @@ export default function Project1() {
                 Full Repo
               </Link>
             </div>
+          </div>
+          <div className={classes.textDiv}>
+            <Typography className={classes.contentText}>
+              At Lambda School, where I studied software engineering and
+              computer science, students were given an exam during which we were
+              to write an algorithm that could traverse an undirected cyclic
+              graph in as few steps as we could manage. My algorithm produced a
+              traversal that beat the prior school record by over 30 steps. Its
+              key feature is that it identifies dead ends in one pass and then
+              methodically explores them in the next pass, thus minimizing
+              backtracking. The algorithm is heavily commented to explain how it
+              works, and also includes my thoughts about how it could be further
+              improved.
+            </Typography>
           </div>
         </div>
       </Card>
