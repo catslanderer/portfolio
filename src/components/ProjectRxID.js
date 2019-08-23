@@ -134,14 +134,14 @@ export default function Project1() {
         <div className={classes.contentDiv}>
           <div className={classes.textDiv}>
             <Typography className={classes.contentText}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-              magnam voluptate ipsam animi optio est natus ad. Perferendis
-              officia, doloribus optio, voluptatibus facere necessitatibus id
-              blanditiis iusto repudiandae temporibus eligendi. Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Cumque quod, at,
-              nostrum, distinctio beatae tenetur expedita omnis id maxime
-              eveniet animi? Quo vitae voluptatem eveniet quidem possimus minus,
-              pariatur in!
+              RxID is an app for identifying and tracking one's medications. My
+              most notable contributions include designing and documenting the
+              data schema, implementing a medication diary component according
+              to design specifications, and taking the lead on learning the
+              Material-UI component library and teaching it to the rest of my
+              team. This project also gave me more experience with a formal Git
+              workflow in which all pull requests required documentation and the
+              approval of at least one teammate.
             </Typography>
           </div>
           <div className={classes.imageLinkDiv}>
