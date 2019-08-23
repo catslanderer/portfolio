@@ -49,6 +49,12 @@ export default createMuiTheme({
       'https://github.com/labs12-rxid/Front-End/commits?author=ChristopherJFoster',
     rxidBackEnd:
       'https://github.com/labs12-rxid/Backend/commits?author=ChristopherJFoster',
+    graphAlgorithm:
+      'https://raw.githubusercontent.com/ChristopherJFoster/Graphs/master/projects/adventure/adv.py',
+    graphRepo: 'https://github.com/ChristopherJFoster/Graphs',
+    conwaysDeploy: 'https://conways-life.netlify.com/',
+    conwaysRepo: 'https://github.com/ChristopherJFoster/Conways-Life',
+    portfolioRepo: 'https://github.com/ChristopherJFoster/portfolio',
   },
   logoProps: {
     css3: {
