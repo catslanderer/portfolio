@@ -5,7 +5,10 @@ import useTheme from '@material-ui/styles/useTheme';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 
-import Project1 from './Project1';
+import ProjectRxID from './ProjectRxID';
+import ProjectGraph from './ProjectGraph';
+import ProjectConways from './ProjectConways';
+import ProjectPortfolio from './ProjectPortfolio';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -18,6 +21,9 @@ const useStyles = makeStyles(theme => ({
     background: theme.palette.b.dark,
   },
   containerPink: {
+    background: theme.palette.b.main,
+  },
+  containerDarkPink: {
     background: theme.palette.b.dark,
   },
   headerDiv: {
@@ -49,6 +55,9 @@ const useStyles = makeStyles(theme => ({
     fontSize: '1.5em',
     paddingBottom: '20px',
   },
+  divider: {
+    height: '30px',
+  },
 }));
 
 export default function Projects() {
@@ -62,6 +71,8 @@ export default function Projects() {
           ? classes.containerDark
           : theme.variables.shadow === 'pink'
           ? classes.containerPink
+          : theme.variables.shadow === 'darkpink'
+          ? classes.containerDarkPink
           : classes.container
       )}
     >
@@ -69,7 +80,13 @@ export default function Projects() {
         <div className={classes.headerDiv}>
           <Typography className={classes.title}>Projects</Typography>
         </div>
-        <Project1 />
+        <ProjectRxID />
+        <div className={classes.divider} />
+        <ProjectGraph />
+        <div className={classes.divider} />
+        <ProjectConways />
+        <div className={classes.divider} />
+        <ProjectPortfolio />
       </div>
     </Box>
   );

@@ -43,6 +43,9 @@ const useStyles = makeStyles(theme => ({
     background: theme.palette.a.dark,
   },
   appBarPink: {
+    background: theme.palette.b.main,
+  },
+  appBarDarkPink: {
     background: theme.palette.b.dark,
   },
   container: {
@@ -190,6 +193,8 @@ export default function NavBar(props) {
               ? classes.appBarDark
               : theme.variables.shadow === 'pink'
               ? classes.appBarPink
+              : theme.variables.shadow === 'darkpink'
+              ? classes.appBarDarkPink
               : classes.appBar
           )}
         >

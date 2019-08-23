@@ -21,7 +21,7 @@ import xd_logo from '../logos/xd_logo.svg';
 
 export default createMuiTheme({
   variables: {
-    shadow: 'pink', // values: 'none', 'dark', 'pink'
+    shadow: 'pink', // values: 'none', 'dark', 'pink', 'darkpink'
   },
   fontSize: {
     title: {

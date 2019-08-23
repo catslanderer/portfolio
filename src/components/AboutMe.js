@@ -16,6 +16,9 @@ const useStyles = makeStyles(theme => ({
     background: theme.palette.b.dark,
   },
   containerPink: {
+    background: theme.palette.b.main,
+  },
+  containerDarkPink: {
     background: theme.palette.b.dark,
   },
   contentDiv: {
@@ -68,6 +71,8 @@ export default function AboutMe() {
           ? classes.containerDark
           : theme.variables.shadow === 'pink'
           ? classes.containerPink
+          : theme.variables.shadow === 'darkpink'
+          ? classes.containerDarkPink
           : classes.container
       )}
     >
