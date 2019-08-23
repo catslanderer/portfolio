@@ -58,21 +58,17 @@ const useStyles = makeStyles(theme => ({
     },
   },
   contentText: {
-    color: [theme.palette.c.main],
+    color: theme.palette.c.main,
     fontSize: '1.5em',
   },
   card: {
-    padding: theme.spacing(2),
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
-    [theme.breakpoints.down('xl')]: {
-      width: '100%',
-    },
-    [theme.breakpoints.down('xs')]: {
-      width: '100%',
-    },
+    width: '100%',
+    height: '100%',
+    padding: theme.spacing(1),
   },
   gridDiv: {
     display: 'flex',
@@ -83,15 +79,26 @@ const useStyles = makeStyles(theme => ({
     padding: '20px 0 10px 0',
   },
   gridItem: {
+    minHeight: '180px',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     textDecoration: 'none',
   },
   logo: {
     width: '100%',
-    height: '100%',
+    height: 'auto',
+  },
+  cardText: {
+    marginTop: '15px',
+    textAlign: 'center',
+    [theme.breakpoints.down('xl')]: {
+      fontSize: '1.2em',
+    },
+    [theme.breakpoints.down('xxs')]: {
+      fontSize: '1em',
+    },
   },
 }));
 
@@ -116,7 +123,7 @@ export default function Contact() {
           </div>
           <Typography className={classes.contentText}>
             I'm familiar with the following languages, frameworks, libraries,
-            and technologies.
+            technologies, and standards.
           </Typography>
           <div className={classes.root}>
             <div className={classes.gridDiv}>
@@ -144,7 +151,9 @@ export default function Contact() {
                   <Grid
                     className={classes.gridItem}
                     item
-                    xs={'auto'}
+                    xs={6}
+                    sm={3}
+                    md={'auto'}
                     component='a'
                     href={item.link}
                     key={item.text}
@@ -155,7 +164,7 @@ export default function Contact() {
                         src={item.img}
                         alt={item.alt}
                       />
-                      {item.text}
+                      <div className={classes.cardText}>{item.text}</div>
                     </Card>
                   </Grid>
                 ))}
