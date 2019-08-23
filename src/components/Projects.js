@@ -14,6 +14,20 @@ const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
   },
+  projects: {
+    [theme.breakpoints.down('xl')]: {
+      paddingTop: '64px',
+      marginTop: '-64px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: '56px',
+      marginTop: '-56px',
+    },
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: '48px',
+      marginTop: '-48px',
+    },
+  },
   container: {
     background: theme.palette.b.main,
   },
@@ -65,29 +79,31 @@ export default function Projects() {
   const theme = useTheme();
 
   return (
-    <Box
-      className={cc(
-        theme.variables.shadow === 'dark'
-          ? classes.containerDark
-          : theme.variables.shadow === 'pink'
-          ? classes.containerPink
-          : theme.variables.shadow === 'darkpink'
-          ? classes.containerDarkPink
-          : classes.container
-      )}
-    >
-      <div className={classes.contentDiv}>
-        <div className={classes.headerDiv}>
-          <Typography className={classes.title}>Projects</Typography>
+    <div id='projects' className={classes.projects}>
+      <Box
+        className={cc(
+          theme.variables.shadow === 'dark'
+            ? classes.containerDark
+            : theme.variables.shadow === 'pink'
+            ? classes.containerPink
+            : theme.variables.shadow === 'darkpink'
+            ? classes.containerDarkPink
+            : classes.container
+        )}
+      >
+        <div className={classes.contentDiv}>
+          <div className={classes.headerDiv}>
+            <Typography className={classes.title}>Projects</Typography>
+          </div>
+          <ProjectRxID />
+          <div className={classes.divider} />
+          <ProjectGraph />
+          <div className={classes.divider} />
+          <ProjectConways />
+          <div className={classes.divider} />
+          <ProjectPortfolio />
         </div>
-        <ProjectRxID />
-        <div className={classes.divider} />
-        <ProjectGraph />
-        <div className={classes.divider} />
-        <ProjectConways />
-        <div className={classes.divider} />
-        <ProjectPortfolio />
-      </div>
-    </Box>
+      </Box>
+    </div>
   );
 }

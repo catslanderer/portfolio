@@ -71,7 +71,7 @@ export default function NavDrawer() {
           { text: 'ABOUT ME', link: [theme.navLinks.aboutMe] },
           {
             text: 'PROJECTS',
-            link: [theme.navLinks.project],
+            link: [theme.navLinks.projects],
           },
           {
             text: 'TECH STACK',
