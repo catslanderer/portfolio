@@ -21,13 +21,20 @@ import xd_logo from '../logos/xd_logo.svg';
 
 export default createMuiTheme({
   variables: {
-    shadow: 'none', // values: 'none', 'dark', 'pink'
+    shadow: 'pink', // values: 'none', 'dark', 'pink'
   },
   navLinks: {
     aboutMe: '#aboutMe',
     projects: '#projects',
     techStack: '#techStack',
     contact: '#contact',
+  },
+  projectLinks: {
+    rxidDeploy: 'https://www.rxid.net/',
+    rxidFrontEnd:
+      'https://github.com/labs12-rxid/Front-End/commits?author=ChristopherJFoster',
+    rxidBackEnd:
+      'https://github.com/labs12-rxid/Backend/commits?author=ChristopherJFoster',
   },
   logoProps: {
     css3: {
