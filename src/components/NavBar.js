@@ -197,7 +197,7 @@ export default function ElevateAppBar(props) {
             classes={{ regular: classes.regular, gutters: classes.gutters }}
             className={classes.container}
           >
-            <div>
+            <Link href={theme.navLinks.aboutMe} className={classes.link}>
               <div
                 className={cc([
                   classes.logoDiv,
@@ -258,7 +258,7 @@ export default function ElevateAppBar(props) {
                   </svg>
                 </div>
               </div>
-            </div>
+            </Link>
             <div className={classes.linksdiv}>
               {useMediaQuery(theme.breakpoints.up('md')) && (
                 <Typography>
