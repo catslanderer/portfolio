@@ -5,6 +5,7 @@ import theme from '../assets/mui-themes/main_theme';
 import NavBar from './NavBar';
 import Banner from './Banner';
 import AboutMe from './AboutMe';
+import Projects from './Projects';
 import TechStack from './TechStack';
 import Contact from './Contact';
 import Footer from './Footer';
@@ -16,6 +17,7 @@ function App() {
         <NavBar />
         <Banner />
         <AboutMe />
+        <Projects />
         <TechStack />
         <Contact />
         <Footer />
