@@ -8,10 +8,10 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import ArrowUpward from '@material-ui/icons/ArrowUpward';
+import Face from '@material-ui/icons/Face';
 import PhotoLibrary from '@material-ui/icons/PhotoLibrary';
-import Memory from '@material-ui/icons/Memory';
 import MailIcon from '@material-ui/icons/Mail';
+import SvgIcon from '@material-ui/core/SvgIcon';
 
 const useStyles = makeStyles(theme => ({
   menuIcon: {
@@ -32,6 +32,14 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.c.main,
   },
 }));
+
+function AccountTree(props) {
+  return (
+    <SvgIcon {...props}>
+      <path d='M22 11V3h-7v3H9V3H2v8h7V8h2v10h4v3h7v-8h-7v3h-2V8h2v3z' />
+    </SvgIcon>
+  );
+}
 
 export default function NavDrawer() {
   const classes = useStyles();
@@ -74,11 +82,11 @@ export default function NavDrawer() {
           <ListItem button component='a' href={item.link} key={item.text}>
             <ListItemIcon className={classes.drawerContent}>
               {item.text === 'ABOUT ME' ? (
-                <ArrowUpward className={classes.drawerContent} />
+                <Face className={classes.drawerContent} />
               ) : item.text === 'PROJECTS' ? (
                 <PhotoLibrary className={classes.drawerContent} />
               ) : item.text === 'TECH STACK' ? (
-                <Memory className={classes.drawerContent} />
+                <AccountTree className={classes.drawerContent} />
               ) : item.text === 'CONTACT' ? (
                 <MailIcon className={classes.drawerContent} />
               ) : (
