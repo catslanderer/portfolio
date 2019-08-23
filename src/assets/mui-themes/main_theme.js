@@ -23,6 +23,20 @@ export default createMuiTheme({
   variables: {
     shadow: 'pink', // values: 'none', 'dark', 'pink'
   },
+  fontSize: {
+    title: {
+      xlDown: '3em',
+      smDown: '2.6em',
+      xsDown: '2.2em',
+      xxsOnly: '1.8em',
+    },
+    text: {
+      xlDown: '1.5em',
+      smDown: '1.3em',
+      xsDown: '1.1em',
+      xxsOnly: '0.9em',
+    },
+  },
   navLinks: {
     aboutMe: '#aboutMe',
     projects: '#projects',

@@ -20,24 +20,40 @@ const useStyles = makeStyles(theme => ({
   },
   contentDiv: {
     background: theme.palette.b.main,
-    height: '500px',
     maxWidth: '1200px',
     margin: '0 auto',
-    padding: '20px 30px 30px 30px',
+    padding: '25px 30px 50px 30px',
   },
   title: {
     color: [theme.palette.c.main],
     [theme.breakpoints.down('xl')]: {
-      fontSize: '3em',
+      fontSize: theme.fontSize.title.xlDown,
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: theme.fontSize.title.smDown,
     },
     [theme.breakpoints.down('xs')]: {
-      fontSize: '2.5em',
+      fontSize: theme.fontSize.title.xsDown,
+    },
+    [theme.breakpoints.only('xxs')]: {
+      fontSize: theme.fontSize.title.xxsOnly,
     },
   },
   contentText: {
     color: theme.palette.c.main,
-    fontSize: '1.5em',
     paddingBottom: '20px',
+    [theme.breakpoints.down('xl')]: {
+      fontSize: theme.fontSize.text.xlDown,
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: theme.fontSize.text.smDown,
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.fontSize.text.xsDown,
+    },
+    [theme.breakpoints.only('xxs')]: {
+      fontSize: theme.fontSize.text.xxsOnly,
+    },
   },
 }));
 

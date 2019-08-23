@@ -59,10 +59,10 @@ const useStyles = makeStyles(theme => ({
   title: {
     color: theme.palette.c.main,
     [theme.breakpoints.down('xl')]: {
-      fontSize: '3em',
+      fontSize: theme.fontSize.title.xlDown,
     },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '2.5em',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: theme.fontSize.title.smDown,
     },
   },
   linkIconDiv: {
@@ -86,16 +86,21 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('xl')]: {
       padding: '30px 15px',
       textAlign: 'center',
-      fontSize: '1.5em',
+      fontSize: theme.fontSize.text.xlDown,
     },
     [theme.breakpoints.down('md')]: {
       padding: '20px 15px',
       textAlign: 'left',
-      fontSize: '1.5em',
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: theme.fontSize.text.smDown,
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.fontSize.text.xsDown,
     },
     [theme.breakpoints.only('xxs')]: {
       padding: '10px 15px',
-      fontSize: '1em',
+      fontSize: theme.fontSize.text.xxsOnly,
     },
   },
 }));

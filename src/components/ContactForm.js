@@ -67,8 +67,17 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.c.main + ' !important',
   },
   shrink: {
-    fontSize: '1.6em',
     paddingLeft: '22px',
+    fontSize: '1.6em',
+    [theme.breakpoints.down('xl')]: {
+      fontSize: theme.fontSize.text.xlDown,
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1.3em',
+    },
+    [theme.breakpoints.only('xxs')]: {
+      fontSize: '1.1em',
+    },
   },
   input: {
     background: '#FBECEB !important',
@@ -103,7 +112,6 @@ const TextInput = withStyles(theme => ({
     position: 'relative',
     backgroundColor: theme.palette.b.main,
     border: '1px solid #ced4da',
-    fontSize: '1em',
     width: '100%',
     padding: '10px 12px',
     transition: theme.transitions.create(['border-color', 'box-shadow']),
@@ -111,6 +119,12 @@ const TextInput = withStyles(theme => ({
       boxShadow: `${fade(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
       borderColor: theme.palette.a.main,
       color: 'black',
+    },
+    [theme.breakpoints.down('xl')]: {
+      fontSize: '1em',
+    },
+    [theme.breakpoints.only('xxs')]: {
+      fontSize: theme.fontSize.text.xxsOnly,
     },
   },
 }))(InputBase);
@@ -226,7 +240,7 @@ export default function ContactForm() {
             id='text-input-message'
             required={true}
             label='Message'
-            placeholder='I love your work 😉'
+            placeholder='I like your work 😉'
             className={cc([classes.textInput, classes.textArea])}
             value={values.message}
             onChange={handleChange('message')}

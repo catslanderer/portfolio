@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => ({
       fontSize: '1.1em',
     },
     [theme.breakpoints.only('xxs')]: {
-      fontSize: '0.9em',
+      fontSize: theme.fontSize.text.xxsOnly,
     },
   },
   link: {

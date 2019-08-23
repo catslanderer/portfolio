@@ -51,16 +51,33 @@ const useStyles = makeStyles(theme => ({
   title: {
     color: [theme.palette.c.main],
     [theme.breakpoints.down('xl')]: {
-      fontSize: '3em',
+      fontSize: theme.fontSize.title.xlDown,
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: theme.fontSize.title.smDown,
     },
     [theme.breakpoints.down('xs')]: {
-      fontSize: '2.5em',
+      fontSize: theme.fontSize.title.xsDown,
+    },
+    [theme.breakpoints.only('xxs')]: {
+      fontSize: theme.fontSize.title.xxsOnly,
     },
   },
   contentText: {
     color: theme.palette.c.main,
-    fontSize: '1.5em',
     paddingBottom: '20px',
+    [theme.breakpoints.down('xl')]: {
+      fontSize: theme.fontSize.text.xlDown,
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: theme.fontSize.text.smDown,
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.fontSize.text.xsDown,
+    },
+    [theme.breakpoints.only('xxs')]: {
+      fontSize: theme.fontSize.text.xxsOnly,
+    },
   },
   card: {
     display: 'flex',
@@ -95,10 +112,13 @@ const useStyles = makeStyles(theme => ({
     marginTop: '15px',
     textAlign: 'center',
     [theme.breakpoints.down('xl')]: {
-      fontSize: '1.2em',
+      fontSize: '1.3em',
     },
-    [theme.breakpoints.down('xxs')]: {
-      fontSize: '1em',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.fontSize.text.xsDown,
+    },
+    [theme.breakpoints.only('xxs')]: {
+      fontSize: theme.fontSize.text.xxsOnly,
     },
   },
 }));
