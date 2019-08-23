@@ -139,7 +139,8 @@ export default function OutlinedTextFields() {
         message: values.message,
       }),
     })
-      .then(() => alert('Success!'))
+      .then(() => setValues({ name: '', email: '', message: '' }))
+      .then(() => console.log('snackbar'))
       .catch(error => alert(error));
     e.preventDefault();
   };
