@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
     maxWidth: '1200px',
     display: 'flex',
     margin: '0 auto',
-    padding: '40px 30px 30px 30px',
+    padding: '40px 30px 50px 30px',
     [theme.breakpoints.down('xl')]: {
       justifyContent: 'center',
     },
