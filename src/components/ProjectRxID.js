@@ -1,5 +1,4 @@
 import React from 'react';
-import cc from 'classcat';
 import makeStyles from '@material-ui/styles/makeStyles';
 import useTheme from '@material-ui/styles/useTheme';
 import Box from '@material-ui/core/Box';
@@ -13,15 +12,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
   },
-  container: {
-    background: theme.palette.b.main,
-  },
-  containerDark: {
-    background: theme.palette.b.dark,
-  },
-  containerPink: {
-    background: theme.palette.b.dark,
-  },
+  container: {},
   card: {
     display: 'flex',
     flexDirection: 'column',
@@ -36,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: '10px',
   },
   title: {
-    color: [theme.palette.c.main],
+    color: [theme.palette.a.xdark],
     [theme.breakpoints.down('xl')]: {
       fontSize: theme.fontSize.title.xlDown,
     },
@@ -134,15 +125,7 @@ export default function Project1() {
   const theme = useTheme();
 
   return (
-    <Box
-      className={cc(
-        theme.variables.shadow === 'dark'
-          ? classes.containerDark
-          : theme.variables.shadow === 'pink'
-          ? classes.containerPink
-          : classes.container
-      )}
-    >
+    <Box className={classes.container}>
       <Card className={classes.card}>
         <div className={classes.headerDiv}>
           <Typography className={classes.title}>RxID</Typography>
