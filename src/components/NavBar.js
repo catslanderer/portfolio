@@ -197,7 +197,7 @@ export default function ElevateAppBar(props) {
             classes={{ regular: classes.regular, gutters: classes.gutters }}
             className={classes.container}
           >
-            <Link href={theme.navLinks.aboutMe} className={classes.link}>
+            <Link href={theme.navLinks.aboutMe}>
               <div
                 className={cc([
                   classes.logoDiv,
