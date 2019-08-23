@@ -178,7 +178,7 @@ export default function Project1() {
                   Deployed Site
                 </Typography>
                 <Typography className={classes.strikethroughLinkText}>
-                  &nbsp;You're on it!
+                  &nbsp;&nbsp;You're on it!
                 </Typography>
               </div>
               <Link
