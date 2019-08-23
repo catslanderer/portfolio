@@ -81,11 +81,10 @@ export default function AboutMe() {
           <Typography className={classes.title}>About Me</Typography>
         </div>
         <Typography className={classes.contentText}>
-          I am a software engineer who recently completed a seven-month coding
-          boot camp focusing on full stack web development and computer science.
-          I love to learn, I love to write clean code, and I love the puzzle of
-          optimization. I'm excited about joining a team of developers and
-          applying the skills I already have as well as learning new ones.
+          I am a software engineer who loves to learn, loves to write clean
+          code, loves the puzzle of optimization. I'm excited about joining a
+          team of developers and applying the skills I already have as well as
+          learning new ones.
         </Typography>
       </div>
     </Box>
