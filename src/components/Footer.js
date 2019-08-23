@@ -18,6 +18,8 @@ const useStyles = makeStyles(theme => ({
     background: theme.palette.b.dark,
   },
   contentDiv: {
+    background: theme.palette.a.main,
+    maxWidth: '1200px',
     display: 'flex',
     margin: '0 auto',
     padding: '40px 30px 30px 30px',
