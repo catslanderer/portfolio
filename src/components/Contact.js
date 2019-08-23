@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     maxWidth: '1200px',
     margin: '0 auto',
-    padding: '15px',
+    padding: '30px 15px 15px 15px',
   },
   headerDiv: {
     display: 'flex',
@@ -83,8 +83,13 @@ const useStyles = makeStyles(theme => ({
   },
   contentText: {
     color: theme.palette.c.main,
-    padding: '0 15px',
+    padding: '30px 15px',
     [theme.breakpoints.down('xl')]: {
+      textAlign: 'center',
+      fontSize: '1.5em',
+    },
+    [theme.breakpoints.down('md')]: {
+      textAlign: 'left',
       fontSize: '1.5em',
     },
     [theme.breakpoints.only('xxs')]: {

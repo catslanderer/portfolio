@@ -14,6 +14,8 @@ const useStyles = makeStyles(theme => ({
     background: 'white',
   },
   container: {
+    maxWidth: '800px',
+    margin: '0 auto',
     display: 'flex',
     flexWrap: 'wrap',
     flexDirection: 'column',
