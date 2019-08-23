@@ -7,6 +7,7 @@ import Banner from './Banner';
 import About from './About';
 import TechStack from './TechStack';
 import Contact from './Contact';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <About />
         <TechStack />
         <Contact />
+        <Footer />
       </div>
     </ThemeProvider>
   );
