@@ -28,13 +28,33 @@ const useStyles = makeStyles(theme => ({
       maxHeight: '48px',
     },
   },
-  gutters: {
+  guttersAll: {
     [theme.breakpoints.down('xl')]: {
       padding: '0px 16px',
     },
     [theme.breakpoints.down('sm')]: {
       padding: '0px 0px 0px 16px',
     },
+  },
+  guttersDark: {
+    background: theme.palette.a.dark,
+  },
+  guttersPink: {
+    background: theme.palette.b.main,
+  },
+  guttersDarkPink: {
+    background: theme.palette.b.dark,
+  },
+  gutters: {
+    background: theme.palette.a.main,
+  },
+  appBarAll: {
+    maxWidth: '1200px',
+    margin: '0 auto',
+    top: '0',
+    left: '0',
+    right: '0',
+    position: 'fixed',
   },
   appBar: {
     background: theme.palette.a.main,
@@ -189,6 +209,7 @@ export default function NavBar(props) {
       <ElevationScroll {...props}>
         <AppBar
           className={cc(
+            classes.appBarAll,
             theme.variables.shadow === 'dark'
               ? classes.appBarDark
               : theme.variables.shadow === 'pink'
@@ -199,7 +220,19 @@ export default function NavBar(props) {
           )}
         >
           <Toolbar
-            classes={{ regular: classes.regular, gutters: classes.gutters }}
+            classes={{
+              regular: classes.regular,
+              gutters: cc([
+                classes.guttersAll,
+                theme.variables.shadow === 'dark'
+                  ? classes.guttersDark
+                  : theme.variables.shadow === 'pink'
+                  ? classes.guttersPink
+                  : theme.variables.shadow === 'darkpink'
+                  ? classes.guttersDarkPink
+                  : classes.guttersRegular,
+              ]),
+            }}
             className={classes.container}
           >
             <Link href={theme.navLinks.aboutMe}>
@@ -290,7 +323,19 @@ export default function NavBar(props) {
         </AppBar>
       </ElevationScroll>
       <Toolbar
-        classes={{ regular: classes.regular, gutters: classes.gutters }}
+        classes={{
+          regular: classes.regular,
+          gutters: cc([
+            classes.guttersAll,
+            theme.variables.shadow === 'dark'
+              ? classes.guttersDark
+              : theme.variables.shadow === 'pink'
+              ? classes.guttersPink
+              : theme.variables.shadow === 'darkpink'
+              ? classes.guttersDarkPink
+              : classes.guttersRegular,
+          ]),
+        }}
       />
     </React.Fragment>
   );
