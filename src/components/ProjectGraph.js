@@ -156,15 +156,14 @@ export default function Project1() {
           <div className={classes.textDiv}>
             <Typography className={classes.contentText}>
               At Lambda School, where I studied software engineering and
-              computer science, students were given an exam during which we were
-              to write an algorithm that could traverse an undirected cyclic
-              graph in as few steps as we could manage. My algorithm produced a
-              traversal that beat the prior school record by over 30 steps. Its
-              key feature is that it identifies dead ends in one pass and then
-              methodically explores them in the next pass, thus minimizing
-              backtracking. The algorithm is heavily commented to explain how it
-              works, and also includes my thoughts about how it could be further
-              improved.
+              computer science, students were tasked with writing an algorithm
+              that could traverse an undirected cyclic graph in as few steps as
+              we could manage. My algorithm produced a traversal that beat the
+              prior school record by over 30 steps. Its key feature is that it
+              identifies dead ends in one pass and then methodically explores
+              them in the next pass, thus minimizing backtracking. The algorithm
+              is heavily commented to explain how it works, and also includes my
+              thoughts about how it could be further improved.
             </Typography>
           </div>
         </div>
