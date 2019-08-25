@@ -61,7 +61,7 @@ const useStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.down('sm')]: {
       width: '100%',
-      paddingRight: '0',
+      paddingLeft: '0',
     },
   },
   contentText: {
