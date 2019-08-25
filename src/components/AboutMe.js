@@ -82,8 +82,8 @@ export default function AboutMe() {
         </div>
         <Typography className={classes.contentText}>
           I am a software engineer who loves to learn, loves to write clean
-          code, loves the puzzle of optimization. I'm excited about joining a
-          team of developers and applying the skills I already have as well as
+          code, and loves the puzzle of optimization. I'm excited about joining
+          a team of developers and applying the skills I already have as well as
           learning new ones.
         </Typography>
       </div>
