@@ -26,13 +26,13 @@ const useStyles = makeStyles(theme => ({
     maxWidth: '1200px',
     margin: '0 auto',
     [theme.breakpoints.down('xl')]: {
-      padding: '25px 30px 50px 30px',
+      padding: '40px 30px 50px 30px',
     },
     [theme.breakpoints.down('sm')]: {
-      padding: '25px 30px 40px 30px',
+      padding: '35px 30px 40px 30px',
     },
     [theme.breakpoints.down('xs')]: {
-      padding: '25px 30px 30px 30px',
+      padding: '30px 30px 30px 30px',
     },
     [theme.breakpoints.only('xxs')]: {
       padding: '25px 30px 20px 30px',
