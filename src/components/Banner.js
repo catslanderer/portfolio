@@ -53,12 +53,12 @@ const useStyles = makeStyles(theme => ({
       '&:before': {
         height: '20px',
         backgroundSize: '40px 40px',
-        backgroundImage: `radial-gradient(circle at 20px -5px, transparent 24px, ${theme.palette.b.main} 26px)`,
+        backgroundImage: `radial-gradient(circle at 20px -10px, transparent 26px, ${theme.palette.b.main} 26px)`,
       },
       '&:after': {
         height: '30px',
         backgroundSize: '80px 40px',
-        backgroundImage: `radial-gradient(circle at 20px 35px, ${theme.palette.b.main} 24px, transparent 26px)`,
+        backgroundImage: `radial-gradient(circle at 20px 30px, ${theme.palette.b.main} 24px, transparent 24px)`,
       },
     },
     [theme.breakpoints.down('sm')]: {
@@ -67,12 +67,12 @@ const useStyles = makeStyles(theme => ({
       '&:before': {
         height: '16px',
         backgroundSize: '32px 32px',
-        backgroundImage: `radial-gradient(circle at 16px -5px, transparent 19.2px, ${theme.palette.b.main} 20.8px)`,
+        backgroundImage: `radial-gradient(circle at 16px -8px, transparent 20.8px, ${theme.palette.b.main} 20.8px)`,
       },
       '&:after': {
         height: '24px',
         backgroundSize: '64px 32px',
-        backgroundImage: `radial-gradient(circle at 16px 27px, ${theme.palette.b.main} 19.2px, transparent 20.8px)`,
+        backgroundImage: `radial-gradient(circle at 16px 24px, ${theme.palette.b.main} 19.2px, transparent 19.2px)`,
       },
     },
     [theme.breakpoints.down('xs')]: {
@@ -81,24 +81,24 @@ const useStyles = makeStyles(theme => ({
       '&:before': {
         height: '12px',
         backgroundSize: '24px 24px',
-        backgroundImage: `radial-gradient(circle at 12px -3px, transparent 14.4px, ${theme.palette.b.main} 15.6px)`,
+        backgroundImage: `radial-gradient(circle at 12px -6px, transparent 15.6px, ${theme.palette.b.main} 15.6px)`,
       },
       '&:after': {
         height: '18px',
         backgroundSize: '48px 24px',
-        backgroundImage: `radial-gradient(circle at 12px 21px, ${theme.palette.b.main} 14.4px, transparent 15.6px)`,
+        backgroundImage: `radial-gradient(circle at 12px 18px, ${theme.palette.b.main} 14.4px, transparent 14.4px)`,
       },
     },
     [theme.breakpoints.only('xxs')]: {
       '&:before': {
         height: '10px',
         backgroundSize: '20px 20px',
-        backgroundImage: `radial-gradient(circle at 10px -3px, transparent 12px, ${theme.palette.b.main} 13px)`,
+        backgroundImage: `radial-gradient(circle at 10px -5px, transparent 13px, ${theme.palette.b.main} 13px)`,
       },
       '&:after': {
         height: '15px',
         backgroundSize: '40px 20px',
-        backgroundImage: `radial-gradient(circle at 10px 17px, ${theme.palette.b.main} 12px, transparent 13px)`,
+        backgroundImage: `radial-gradient(circle at 10px 15px, ${theme.palette.b.main} 12px, transparent 12px)`,
       },
     },
   },
