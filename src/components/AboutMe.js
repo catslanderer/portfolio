@@ -25,7 +25,18 @@ const useStyles = makeStyles(theme => ({
     background: theme.palette.b.main,
     maxWidth: '1200px',
     margin: '0 auto',
-    padding: '25px 30px 50px 30px',
+    [theme.breakpoints.down('xl')]: {
+      padding: '25px 30px 50px 30px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      padding: '25px 30px 40px 30px',
+    },
+    [theme.breakpoints.down('xs')]: {
+      padding: '25px 30px 30px 30px',
+    },
+    [theme.breakpoints.only('xxs')]: {
+      padding: '25px 30px 20px 30px',
+    },
   },
   title: {
     color: [theme.palette.c.main],
