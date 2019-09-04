@@ -25,6 +25,7 @@ const useStyles = makeStyles(theme => ({
   },
   contentDiv: {
     display: 'grid',
+    width: '100%',
     maxWidth: '1200px',
     margin: '0 auto',
     background: [theme.palette.a.main],
@@ -47,7 +48,6 @@ const useStyles = makeStyles(theme => ({
       backgroundRepeat: 'repeat-x',
     },
     [theme.breakpoints.down('xl')]: {
-      width: '100%',
       height: '500px',
       gridTemplateRows: '25% 50% 25%',
       '&:before': {
