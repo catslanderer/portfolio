@@ -240,7 +240,7 @@ export default function ContactForm() {
             id='text-input-message'
             required={true}
             label='Message'
-            placeholder='I like your work 😉'
+            placeholder="Let's work together..."
             className={cc([classes.textInput, classes.textArea])}
             value={values.message}
             onChange={handleChange('message')}
