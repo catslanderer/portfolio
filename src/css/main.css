@@ -127,6 +127,7 @@ table {
   border-spacing: 0;
 }
 html {
+  min-width: 275px;
   font-family: 'Roboto', sans-serif;
   scroll-behavior: smooth;
 }
