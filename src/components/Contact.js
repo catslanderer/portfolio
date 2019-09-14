@@ -47,7 +47,12 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     maxWidth: '1200px',
     margin: '0 auto',
-    padding: '30px 15px 15px 15px',
+    [theme.breakpoints.up('xs')]: {
+      padding: '30px 15px 15px 15px',
+    },
+    [theme.breakpoints.only('xxs')]: {
+      padding: '30px 5px 15px 5px',
+    },
   },
   headerDiv: {
     display: 'flex',
@@ -102,7 +107,7 @@ const useStyles = makeStyles(theme => ({
       fontSize: theme.fontSize.text.xsDown,
     },
     [theme.breakpoints.only('xxs')]: {
-      padding: '10px 15px',
+      padding: '10px 5px',
       fontSize: theme.fontSize.text.xxsOnly,
     },
   },

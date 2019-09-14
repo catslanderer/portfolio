@@ -47,6 +47,9 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('xs')]: {
       padding: '10px 15px 15px 15px',
     },
+    [theme.breakpoints.only('xxs')]: {
+      padding: '10px 5px 15px 5px',
+    },
   },
   textField: {
     flexGrow: 1,
@@ -61,7 +64,13 @@ const useStyles = makeStyles(theme => ({
   },
   formControl: {
     flexGrow: 1,
-    padding: '0 15px 10px 15px',
+
+    [theme.breakpoints.down('xl')]: {
+      padding: '0 15px 10px 15px',
+    },
+    [theme.breakpoints.only('xxs')]: {
+      padding: '0 5px 10px 5px',
+    },
   },
   inputLabel: {
     color: theme.palette.c.main + ' !important',
