@@ -64,7 +64,6 @@ const useStyles = makeStyles(theme => ({
   },
   formControl: {
     flexGrow: 1,
-
     [theme.breakpoints.down('xl')]: {
       padding: '0 15px 10px 15px',
     },
