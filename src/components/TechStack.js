@@ -3,12 +3,13 @@ import cc from 'classcat';
 import makeStyles from '@material-ui/styles/makeStyles';
 import useTheme from '@material-ui/styles/useTheme';
 import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
+import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles(theme => ({
   root: {
+    background: 'white',
     flexGrow: 1,
   },
   techStack: {
@@ -151,7 +152,7 @@ const useStyles = makeStyles(theme => ({
       fontSize: theme.fontSize.text.xxsOnly,
     },
   },
-  card: {
+  logoDiv: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
@@ -180,7 +181,7 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     height: 'auto',
   },
-  cardText: {
+  logoText: {
     marginTop: '15px',
     textAlign: 'center',
     [theme.breakpoints.down('xl')]: {
@@ -220,7 +221,7 @@ export default function TechStack() {
             I'm familiar with the following languages, frameworks, libraries,
             technologies, and standards.
           </Typography>
-          <div className={classes.root}>
+          <Card className={classes.root}>
             <div className={classes.gridDiv}>
               <Grid className={classes.gridContainer} container spacing={3}>
                 {[
@@ -253,19 +254,19 @@ export default function TechStack() {
                     href={item.link}
                     key={item.text}
                   >
-                    <Card className={classes.card}>
+                    <div className={classes.logoDiv}>
                       <img
                         className={classes.logo}
                         src={item.img}
                         alt={item.alt}
                       />
-                      <div className={classes.cardText}>{item.text}</div>
-                    </Card>
+                      <div className={classes.logoText}>{item.text}</div>
+                    </div>
                   </Grid>
                 ))}
               </Grid>
             </div>
-          </div>
+          </Card>
         </div>
       </Box>
     </div>
