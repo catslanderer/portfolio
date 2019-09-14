@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
       padding: '30px 30px 30px 30px',
     },
     [theme.breakpoints.only('xxs')]: {
-      padding: '25px 30px 20px 30px',
+      padding: '25px 10px 20px 10px',
     },
   },
   title: {
