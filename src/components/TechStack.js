@@ -196,6 +196,7 @@ const useStyles = makeStyles(theme => ({
   logoText: {
     marginTop: '15px',
     textAlign: 'center',
+    color: theme.palette.c.main,
     [theme.breakpoints.down('xl')]: {
       fontSize: '1.3em',
     },
