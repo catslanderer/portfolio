@@ -101,7 +101,7 @@ const useStyles = makeStyles(theme => ({
       },
     },
     [theme.breakpoints.only('xxs')]: {
-      padding: '20px 30px 40px 30px',
+      padding: '20px 10px 40px 10px',
       '&:before': {
         height: '10px',
         backgroundSize: '20px 20px',
@@ -176,6 +176,18 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'flex-start',
     alignItems: 'center',
     textDecoration: 'none',
+    [theme.breakpoints.down('xl')]: {
+      minHeight: '180px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      minHeight: '180px',
+    },
+    [theme.breakpoints.down('xs')]: {
+      minHeight: '180px',
+    },
+    [theme.breakpoints.only('xxs')]: {
+      minHeight: '80px',
+    },
   },
   logo: {
     width: '100%',
@@ -191,7 +203,7 @@ const useStyles = makeStyles(theme => ({
       fontSize: theme.fontSize.text.xsDown,
     },
     [theme.breakpoints.only('xxs')]: {
-      fontSize: theme.fontSize.text.xxsOnly,
+      fontSize: '0.75em',
     },
   },
 }));
@@ -247,9 +259,8 @@ export default function TechStack() {
                   <Grid
                     className={classes.gridItem}
                     item
-                    xs={6}
-                    sm={3}
-                    md={'auto'}
+                    xs={4}
+                    sm={'auto'}
                     component='a'
                     href={item.link}
                     key={item.text}
