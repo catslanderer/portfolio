@@ -260,7 +260,8 @@ export default function TechStack() {
                     className={classes.gridItem}
                     item
                     xs={4}
-                    sm={'auto'}
+                    sm={3}
+                    md={'auto'}
                     component='a'
                     href={item.link}
                     key={item.text}
