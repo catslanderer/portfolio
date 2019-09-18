@@ -149,7 +149,7 @@ export default function Project1() {
                 href={theme.projectLinks.graphRepo}
                 className={classes.link}
               >
-                Full Repo
+                Repo
               </Link>
             </div>
           </div>

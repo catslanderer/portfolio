@@ -51,7 +51,8 @@ export default createMuiTheme({
       'https://github.com/labs12-rxid/Backend/commits?author=ChristopherJFoster',
     graphAlgorithm:
       'https://raw.githubusercontent.com/ChristopherJFoster/Graphs/master/projects/adventure/adv.py',
-    graphRepo: 'https://github.com/ChristopherJFoster/Graphs',
+    graphRepo:
+      'https://github.com/ChristopherJFoster/Graphs/tree/master/projects/adventure',
     conwaysDeploy: 'https://conways-life.netlify.com/',
     conwaysRepo: 'https://github.com/ChristopherJFoster/Conways-Life',
     portfolioRepo: 'https://github.com/ChristopherJFoster/portfolio',
