@@ -7,8 +7,9 @@ import Typography from '@material-ui/core/Typography';
 
 import ProjectRxID from './ProjectRxID';
 import ProjectGraph from './ProjectGraph';
-import ProjectConways from './ProjectConways';
+import ProjectAspectRatio from './ProjectAspectRatio';
 import ProjectPortfolio from './ProjectPortfolio';
+import ProjectConways from './ProjectConways';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -104,9 +105,11 @@ export default function Projects() {
           <div className={classes.divider} />
           <ProjectGraph />
           <div className={classes.divider} />
-          <ProjectConways />
+          <ProjectAspectRatio />
           <div className={classes.divider} />
           <ProjectPortfolio />
+          <div className={classes.divider} />
+          <ProjectConways />
         </div>
       </Box>
     </div>
