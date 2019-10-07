@@ -53,9 +53,14 @@ export default createMuiTheme({
       'https://raw.githubusercontent.com/ChristopherJFoster/Graphs/master/projects/adventure/adv.py',
     graphRepo:
       'https://github.com/ChristopherJFoster/Graphs/tree/master/projects/adventure',
+    aspectRatioRepo:
+      'https://github.com/ChristopherJFoster/Aspect-Ratio-Detector',
+    aspectRatioCodeSandbox:
+      'https://codesandbox.io/s/github/ChristopherJFoster/Aspect-Ratio-Detector',
+    aspectRatioArticle: 'https://t.co/bPMR92hayd?amp=1',
+    portfolioRepo: 'https://github.com/ChristopherJFoster/portfolio',
     conwaysDeploy: 'https://conways-life.netlify.com/',
     conwaysRepo: 'https://github.com/ChristopherJFoster/Conways-Life',
-    portfolioRepo: 'https://github.com/ChristopherJFoster/portfolio',
   },
   logoProps: {
     css3: {
