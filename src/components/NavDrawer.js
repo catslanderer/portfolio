@@ -10,7 +10,8 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Face from '@material-ui/icons/Face';
 import PhotoLibrary from '@material-ui/icons/PhotoLibrary';
-import MailIcon from '@material-ui/icons/Mail';
+import Mail from '@material-ui/icons/Mail';
+import ListAlt from '@material-ui/icons/ListAlt';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
 const useStyles = makeStyles(theme => ({
@@ -78,6 +79,7 @@ export default function NavDrawer() {
             link: [theme.navLinks.techStack],
           },
           { text: 'CONTACT', link: [theme.navLinks.contact] },
+          { text: 'RÉSUMÉ', link: [theme.navLinks.resume] },
         ].map(item => (
           <ListItem button component='a' href={item.link} key={item.text}>
             <ListItemIcon className={classes.drawerContent}>
@@ -88,7 +90,9 @@ export default function NavDrawer() {
               ) : item.text === 'TECH STACK' ? (
                 <AccountTree className={classes.drawerContent} />
               ) : item.text === 'CONTACT' ? (
-                <MailIcon className={classes.drawerContent} />
+                <Mail className={classes.drawerContent} />
+              ) : item.text === 'RÉSUMÉ' ? (
+                <ListAlt className={classes.drawerContent} />
               ) : (
                 <></>
               )}

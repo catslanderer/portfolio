@@ -42,6 +42,7 @@ export default createMuiTheme({
     projects: '#projects',
     techStack: '#techStack',
     contact: '#contact',
+    resume: 'http://rebrand.ly/christopher-j-foster-resume',
   },
   projectLinks: {
     rxidDeploy: 'https://www.rxid.net/',

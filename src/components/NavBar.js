@@ -75,7 +75,7 @@ const useStyles = makeStyles(theme => ({
     margin: '0 auto',
     display: 'grid',
     [theme.breakpoints.down('xl')]: {
-      gridTemplateColumns: '40% 60%',
+      gridTemplateColumns: '35% 65%',
     },
     [theme.breakpoints.down('sm')]: {
       gridTemplateColumns: '75% 25%',
@@ -314,6 +314,9 @@ export default function NavBar(props) {
                   </Link>
                   <Link href={theme.navLinks.contact} className={classes.link}>
                     CONTACT
+                  </Link>
+                  <Link href={theme.navLinks.resume} className={classes.link}>
+                    RÉSUMÉ
                   </Link>
                 </Typography>
               )}
