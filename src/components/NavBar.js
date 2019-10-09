@@ -316,7 +316,7 @@ export default function NavBar(props) {
                     CONTACT
                   </Link>
                   <Link href={theme.navLinks.resume} className={classes.link}>
-                    RÉSUMÉ
+                    RESUME
                   </Link>
                 </Typography>
               )}

@@ -79,7 +79,7 @@ export default function NavDrawer() {
             link: [theme.navLinks.techStack],
           },
           { text: 'CONTACT', link: [theme.navLinks.contact] },
-          { text: 'RÉSUMÉ', link: [theme.navLinks.resume] },
+          { text: 'RESUME', link: [theme.navLinks.resume] },
         ].map(item => (
           <ListItem button component='a' href={item.link} key={item.text}>
             <ListItemIcon className={classes.drawerContent}>
@@ -91,7 +91,7 @@ export default function NavDrawer() {
                 <AccountTree className={classes.drawerContent} />
               ) : item.text === 'CONTACT' ? (
                 <Mail className={classes.drawerContent} />
-              ) : item.text === 'RÉSUMÉ' ? (
+              ) : item.text === 'RESUME' ? (
                 <ListAlt className={classes.drawerContent} />
               ) : (
                 <></>
