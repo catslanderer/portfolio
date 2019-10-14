@@ -315,9 +315,9 @@ export default function NavBar(props) {
                   <Link href={theme.navLinks.contact} className={classes.link}>
                     CONTACT
                   </Link>
-                  <Link href={theme.navLinks.resume} className={classes.link}>
-                    RESUME
-                  </Link>
+                  {/* <Link href={theme.navLinks.resume} className={classes.link}>
+                    RÉSUMÉ
+                  </Link> */}
                 </Typography>
               )}
               {useMediaQuery(theme.breakpoints.down('sm')) && <NavDrawer />}
