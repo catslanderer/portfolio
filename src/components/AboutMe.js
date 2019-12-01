@@ -5,7 +5,7 @@ import useTheme from '@material-ui/styles/useTheme';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
   },
@@ -40,6 +40,7 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     color: [theme.palette.c.main],
+    fontWeight: '700',
     [theme.breakpoints.down('xl')]: {
       fontSize: theme.fontSize.title.xlDown,
     },
@@ -84,7 +85,7 @@ export default function AboutMe() {
           ? classes.containerPink
           : theme.variables.shadow === 'darkpink'
           ? classes.containerDarkPink
-          : classes.container
+          : classes.container,
       )}
     >
       <div className={classes.contentDiv}>
