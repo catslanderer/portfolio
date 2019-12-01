@@ -25,10 +25,10 @@ export default createMuiTheme({
   },
   fontSize: {
     title: {
-      xlDown: '3em',
-      smDown: '2.6em',
-      xsDown: '2.2em',
-      xxsOnly: '1.8em',
+      xlDown: '2.6em',
+      smDown: '2.2em',
+      xsDown: '1.7em',
+      xxsOnly: '1.4em',
     },
     text: {
       xlDown: '1.5em',
