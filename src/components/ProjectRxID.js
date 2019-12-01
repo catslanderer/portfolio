@@ -8,7 +8,7 @@ import Link from '@material-ui/core/Link';
 
 import rxid_screenshot from '../assets/images/rxid_screenshot.png';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
   },
@@ -19,7 +19,12 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center',
     width: '100%',
     height: '100%',
-    padding: '20px',
+    [theme.breakpoints.down('xl')]: {
+      padding: '30px 40px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      padding: '25px 30px',
+    },
   },
   headerDiv: {
     width: '100%',
@@ -28,6 +33,7 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     color: [theme.palette.a.xdark],
+    fontWeight: '700',
     [theme.breakpoints.down('xl')]: {
       fontSize: theme.fontSize.title.xlDown,
     },
@@ -147,7 +153,7 @@ export default function Project1() {
           <div className={classes.imageLinkDiv}>
             <img
               src={rxid_screenshot}
-              alt='rxid screenshot'
+              alt="rxid screenshot"
               className={classes.img}
             />
             <div className={classes.linksDiv}>
