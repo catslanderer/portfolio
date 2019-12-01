@@ -7,7 +7,7 @@ import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     background: 'white',
     flexGrow: 1,
@@ -123,6 +123,7 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     color: [theme.palette.c.main],
+    fontWeight: '700',
     [theme.breakpoints.down('xl')]: {
       fontSize: theme.fontSize.title.xlDown,
     },
@@ -163,6 +164,18 @@ const useStyles = makeStyles(theme => ({
   },
   gridDiv: {
     display: 'flex',
+    [theme.breakpoints.down('xl')]: {
+      padding: '30px 40px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      padding: '20px 25px',
+    },
+    [theme.breakpoints.down('xs')]: {
+      padding: '12px 15px',
+    },
+    [theme.breakpoints.only('xxs')]: {
+      padding: '8px 10px',
+    },
   },
   gridContainer: {
     display: 'flex',
@@ -214,7 +227,7 @@ export default function TechStack() {
   const theme = useTheme();
 
   return (
-    <div id='techStack' className={classes.techStack}>
+    <div id="techStack" className={classes.techStack}>
       <Box
         className={cc(
           theme.variables.shadow === 'dark'
@@ -223,7 +236,7 @@ export default function TechStack() {
             ? classes.containerPink
             : theme.variables.shadow === 'darkpink'
             ? classes.containerDarkPink
-            : classes.container
+            : classes.container,
         )}
       >
         <div className={classes.contentDiv}>
@@ -256,14 +269,14 @@ export default function TechStack() {
                   theme.logoProps.css3,
                   theme.logoProps.illustrator,
                   theme.logoProps.xd,
-                ].map(item => (
+                ].map((item) => (
                   <Grid
                     className={classes.gridItem}
                     item
                     xs={4}
                     sm={3}
                     md={'auto'}
-                    component='a'
+                    component="a"
                     href={item.link}
                     key={item.text}
                   >
