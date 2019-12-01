@@ -11,7 +11,7 @@ import ProjectAspectRatio from './ProjectAspectRatio';
 import ProjectPortfolio from './ProjectPortfolio';
 import ProjectConways from './ProjectConways';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
   },
@@ -57,6 +57,7 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     color: [theme.palette.c.main],
+    fontWeight: '700',
     [theme.breakpoints.down('xl')]: {
       fontSize: theme.fontSize.title.xlDown,
     },
@@ -85,7 +86,7 @@ export default function Projects() {
   const theme = useTheme();
 
   return (
-    <div id='projects' className={classes.projects}>
+    <div id="projects" className={classes.projects}>
       <Box
         className={cc(
           theme.variables.shadow === 'dark'
@@ -94,7 +95,7 @@ export default function Projects() {
             ? classes.containerPink
             : theme.variables.shadow === 'darkpink'
             ? classes.containerDarkPink
-            : classes.container
+            : classes.container,
         )}
       >
         <div className={classes.contentDiv}>
