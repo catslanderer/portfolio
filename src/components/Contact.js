@@ -11,7 +11,7 @@ import linkedInIcon from '../assets/icons/li_icon_40px_theme.palette.c.main.svg'
 import twitterIcon from '../assets/icons/tw_icon_40px_theme.palette.c.main.svg';
 import ContactForm from './ContactForm';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     background: theme.palette.a.main,
     width: '100%',
@@ -66,6 +66,7 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     color: theme.palette.c.main,
+    fontWeight: '700',
     [theme.breakpoints.down('xl')]: {
       fontSize: theme.fontSize.title.xlDown,
     },
@@ -118,7 +119,7 @@ export default function Contact() {
   const theme = useTheme();
 
   return (
-    <div id='contact' className={classes.contact}>
+    <div id="contact" className={classes.contact}>
       <Box
         className={cc(
           theme.variables.shadow === 'dark'
@@ -127,7 +128,7 @@ export default function Contact() {
             ? classes.containerPink
             : theme.variables.shadow === 'darkpink'
             ? classes.containerDarkPink
-            : classes.container
+            : classes.container,
         )}
       >
         <div className={classes.contentDiv}>
@@ -136,32 +137,32 @@ export default function Contact() {
             <div className={classes.linksDiv}>
               <IconButton
                 className={classes.linkIconDiv}
-                href='https://github.com/ChristopherJFoster'
+                href="https://github.com/ChristopherJFoster"
               >
                 <img
                   className={classes.linkIcon}
                   src={gitHubIcon}
-                  alt='GitHub icon/link'
+                  alt="GitHub icon/link"
                 />
               </IconButton>
               <IconButton
                 className={classes.linkIconDiv}
-                href='https://www.linkedin.com/in/christopherjfoster/'
+                href="https://www.linkedin.com/in/christopherjfoster/"
               >
                 <img
                   className={classes.linkIcon}
                   src={linkedInIcon}
-                  alt='LinkedIn icon/link'
+                  alt="LinkedIn icon/link"
                 />
               </IconButton>
               <IconButton
                 className={classes.linkIconDiv}
-                href='https://twitter.com/chrstphrjfstr'
+                href="https://twitter.com/chrstphrjfstr"
               >
                 <img
                   className={classes.linkIcon}
                   src={twitterIcon}
-                  alt='Twitter icon/link'
+                  alt="Twitter icon/link"
                 />
               </IconButton>
             </div>
